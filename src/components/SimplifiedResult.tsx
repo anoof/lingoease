@@ -10,7 +10,7 @@ export default function SimplifiedResult() {
   const simplifiedResult = useStore((state) => state.simplifiedResult);
   return (
     <div className='flex flex-col items-center justify-center w-full px-8 overscroll-none'>
-      {simplifiedResult?.audioFileUrl && <ResultTabs />}
+      {simplifiedResult && <ResultTabs />}
     </div>
   );
 }
@@ -73,11 +73,11 @@ function SimplifiedTabContent() {
           </span>
         </div>
         <div className='flex  flex-col text-md mb-4 flex-1 w-full gap-4'>
-          <AudioPlayer
+          {simplifiedResult.audioFileUrl && <AudioPlayer
             src={simplifiedResult.audioFileUrl}
             title='Simplified Audio'
             downloadUrl={simplifiedResult.audioDownloadUrl}
-          />
+          />}
           <div className='h-[calc(100dvh-30rem)] w-full rounded-md p-4 overflow-y-auto overscroll-none'>
             {analysedText?.analyzedChunks.map(
               ({ text, newWords, lemmasOriginalWordsMap }, index) => (

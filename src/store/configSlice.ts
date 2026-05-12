@@ -23,7 +23,7 @@ export const createConfigSlice: StateCreator<
   file: null,
   fileUrl: '',
   outputOptions: {
-    level: { level: 'Beginner', wordFreq: 500 },
+    level: { level: 'Elementary', wordFreq: 1000 },
     voice: 'alloy',
     style: OUTPUT_STYLES[0],
   } satisfies OutputOptions,
@@ -86,7 +86,7 @@ export const createConfigSlice: StateCreator<
       if (activeApiKey?.status === 'valid') {
         if (state.content || state.file) {
           state.currentStep = 2;
-          if (state.simplifiedResult?.audioFileUrl) {
+          if (state.simplifiedResult) {
             state.currentStep = 3;
           }
         } else {

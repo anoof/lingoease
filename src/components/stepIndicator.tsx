@@ -53,7 +53,7 @@ export default function StepIndicator() {
   return (
     <div className='flex flex-1 flex-col items-center justify-center w-full'>
       <Toaster />
-      {!simplifiedResult?.audioFileUrl ? (
+      {!simplifiedResult ? (
         <ul className='steps steps-vertical'>
           {stepInfo.map((info, index) => (
             <li key={index} className={getStepClass(info.status)}>

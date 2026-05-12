@@ -25,8 +25,9 @@ export default function Header() {
           LingoEase
         </div>
         <div className='flex flex-col items-center justify-center p-2 text-sm font-semibold'>
-          <div>Simplify Language</div>
-          <div>Amplify Understanding</div>
+          <div>Powered by LexScaffold</div>
+          <div className='text-xs font-normal text-muted-foreground mt-1'>Simplify Language</div>
+          <div className='text-xs font-normal text-muted-foreground mt-1'>Amplify Understanding</div>
         </div>
       </div>
     </div>

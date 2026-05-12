@@ -1,6 +1,5 @@
 'use client';
 
-import { analyzeAndFindCandidateWords } from '@/actions/llm/analyzeAndFindCandidateWords';
 import { segment } from '@/actions/llm/segment';
 import { simplify } from '@/actions/llm/simplify';
 import { tts } from '@/actions/llm/tts';
@@ -113,27 +112,25 @@ export default function AudioVideoUpload({
 
         setSimplificationProgress('Analyzing the scripts...');
 
-        // Analyze the chunks
-        const analysisRes = await analyzeAndFindCandidateWords(
-          chunks,
-          wordFreq
-        );
-        console.log('------------- analysis ------------- ');
-        console.log(analysisRes);
+        const lexLevel = wordFreq === 1000 ? '1k' : '2k';
 
-        setOriginalChunks(analysisRes.analyzedChunks);
+        // Analyze the chunks
+        // const analysisRes = await analyzeAndFindCandidateWords(
+        //   chunks,
+        //   wordFreq
+        // );
+        // console.log('------------- analysis ------------- ');
+        // console.log(analysisRes);
+
+        // setOriginalChunks(analysisRes.analyzedChunks);
+        setOriginalChunks(chunks.map((text) => ({ text, newWords: [] })));
 
         setSimplificationProgress('Simplifying the scripts...');
-
         const simplified = await simplify(
-          model,
-          analysisRes.analyzedChunks.map(({ text, newWords }) => ({
-            text,
-            newWords,
-          })),
-          analysisRes.candidateMap,
-          contextWindowSize
+          chunks.map((text) => ({ text, newWords: [] })),
+          lexLevel
         );
+
         console.log('------------- simplified ------------- ');
         console.log(simplified);
 
@@ -157,20 +154,7 @@ export default function AudioVideoUpload({
 
         const { url, downloadUrl } = ttsResp;
 
-        // setSimplificationProgress('');
-
-        // Using kokoro-js for TTS
-        // const url = await kokoroTTS(simplifiedContent, kokoroModel);
-        // const url = await kokoroTTSStreamWaitUrl(simplifiedContent);
-        // const downloadUrl = url;
-
         setSimplificationProgress('');
-
-        // const url = `/api/tts?content=${encodeURIComponent(simplifiedContent)}`;
-        // const url = `https://gggr3f0tgjgai8sk.public.blob.vercel-storage.com/ted1-aIKJe4NgUrJmb2e7wxFShGE3Xj6PmC.mp3`;
-
-        // const downloadUrl = '';
-
         setIsOpen(false);
         setSimplifiedResult({
           url,
@@ -181,6 +165,7 @@ export default function AudioVideoUpload({
           newWordsRate: analyzedSimplifiedChunks.newWordsRate,
         });
         updateCurrentStep();
+
       } catch (error) {
         console.error('Error during simplification:', error);
         // Include stack if available for more detail

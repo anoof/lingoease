@@ -1,6 +1,5 @@
 'use client';
 
-import { analyzeAndFindCandidateWords } from '@/actions/llm/analyzeAndFindCandidateWords';
 import { segment } from '@/actions/llm/segment';
 import { simplify } from '@/actions/llm/simplify';
 import { tts } from '@/actions/llm/tts';
@@ -26,8 +25,7 @@ export default function TextUpload({
 }: {
   children: React.ReactNode;
 }) {
-  const model = useStore((s) => s.selectedModel);
-  const wordFreq = useStore((state) => state.outputOptions.level.wordFreq);
+  const wordFreq = useStore((state) => state.outputOptions.level.wordFreq) as 1000 | 2000;
   const voice = useStore((state) => state.outputOptions.voice);
   const style = useStore((state) => state.outputOptions.style);
 
@@ -38,8 +36,8 @@ export default function TextUpload({
   const setSimplificationProgress = useStore(
     (state) => state.setSimplificationProgress
   );
-  const setOriginalChunks = useStore((state) => state.setOriginalChunks);
-  const contextWindowSize = useStore((state) => state.contextWindowSize);
+  // const setOriginalChunks = useStore((state) => state.setOriginalChunks);
+  // const contextWindowSize = useStore((state) => state.contextWindowSize);
 
   const [simplifying, startSimplifyTransition] = useTransition();
 
@@ -59,28 +57,22 @@ export default function TextUpload({
         console.log('------------- chunks ------------- ');
         console.log(chunks);
 
-        setSimplificationProgress('Analyzing the scripts...');
+        const lexLevel = wordFreq === 1000 ? '1k' : '2k';
 
         // Analyze the chunks
-        const analysisRes = await analyzeAndFindCandidateWords(
-          chunks,
-          wordFreq
-        );
-        console.log('------------- analysis ------------- ');
-        console.log(analysisRes);
+        // const analysisRes = await analyzeAndFindCandidateWords(
+        //   chunks,
+        //   wordFreq
+        // );
+        // console.log('------------- analysis ------------- ');
+        // console.log(analysisRes);
 
-        setOriginalChunks(analysisRes.analyzedChunks);
+        // setOriginalChunks(analysisRes.analyzedChunks);
 
         setSimplificationProgress('Simplifying the scripts...');
-
         const simplified = await simplify(
-          model,
-          analysisRes.analyzedChunks.map(({ text, newWords }) => ({
-            text,
-            newWords,
-          })),
-          analysisRes.candidateMap,
-          contextWindowSize
+          chunks.map((text) => ({ text, newWords: [] })),
+          lexLevel
         );
         console.log('------------- simplified ------------- ');
         console.log(simplified);

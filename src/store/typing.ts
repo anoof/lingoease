@@ -76,8 +76,9 @@ export type StoreState = ConfigSlice;
 // Output options used for audio generation and guidance
 // Output level object with explicit vocabulary frequency
 export const OUTPUT_LEVELS = [
-  { level: 'Beginner', wordFreq: 500 },
+  // { level: 'Beginner', wordFreq: 500 },
   { level: 'Elementary', wordFreq: 1000 },
+  { level: 'Pre-Intermediate', wordFreq: 2000 },
 ] as const;
 export type OutputLevel = (typeof OUTPUT_LEVELS)[number];
 

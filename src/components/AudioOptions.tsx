@@ -50,7 +50,7 @@ export default function AudioOptions() {
               if (next) setOutputOptions({ level: next });
             }}
           >
-            {(['Beginner', 'Elementary'] as const).map((opt) => {
+            {OUTPUT_LEVELS.map(({ level: opt }) => {
               const id = `level-${opt.toLowerCase()}`;
               const selected = levelObj.level === opt;
               return (

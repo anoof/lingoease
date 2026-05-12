@@ -1,14 +1,13 @@
 import model from 'wink-eng-lite-web-model';
 import winkNLP, { TokenItsFunction } from 'wink-nlp';
 import word1000 from './wordlist/1000.json' with { type: 'json' };
-import word500 from './wordlist/500.json' with { type: 'json' };
+import word2000 from './wordlist/2000.json' with { type: 'json' };
 
-const word500Set = new Set(word500);
 const word1000Set = new Set(word1000);
+const word2000Set = new Set(word2000);
 
-export function analyzeChunks(chunks: string[], wordFreq: 500 | 1000) {
-  const wordSet = wordFreq === 500 ? word500Set : word1000Set;
-
+export function analyzeChunks(chunks: string[], wordFreq: 1000 | 2000) {
+  const wordSet = wordFreq === 1000 ? word1000Set : word2000Set;
   const nlp = winkNLP(model);
   const { its, as } = nlp;
 
