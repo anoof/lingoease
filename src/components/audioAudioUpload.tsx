@@ -31,6 +31,7 @@ import {
   DrawerTrigger,
 } from './ui/drawer';
 import UploadMedia from './ui/uploadMedia';
+import { upload } from '@vercel/blob/client';
 
 export default function AudioVideoUpload({
   children,
@@ -72,27 +73,18 @@ export default function AudioVideoUpload({
       try {
         setSimplificationProgress('Extracting the scripts from audio...');
 
-        const form = new FormData();
-
-        const file_ = await file?.arrayBuffer();
-
-        if (file_) {
-          form.append(
-            'blob',
-            new Blob([file_], { type: file!.type }),
-            file!.name
-          );
-        }
-        form.append('filename', file!.name);
+        const blob = await upload(file!.name, file!, {
+          access: 'public',
+          handleUploadUrl: '/api/blob-upload',
+        });
 
         const res = await fetch('/api/transcribe', {
           method: 'POST',
-          body: form,
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ blobUrl: blob.url, filename: file!.name }),
         });
 
         const transcription = await res.json();
-
-        // const transcription = await res.data;
 
         console.log('------------- transcription ------------- ');
         console.log(transcription);
