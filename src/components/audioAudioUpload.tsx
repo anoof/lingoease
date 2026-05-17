@@ -76,6 +76,7 @@ export default function AudioVideoUpload({
         const blob = await upload(file!.name, file!, {
           access: 'public',
           handleUploadUrl: '/api/blob-upload',
+          allowOverwrite: true,
         });
 
         const res = await fetch('/api/transcribe', {
