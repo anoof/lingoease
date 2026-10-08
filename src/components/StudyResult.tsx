@@ -4,7 +4,7 @@ import { analyzeChunks } from '@/actions/llm/utils';
 import { buildResultView } from '@/lib/resultView';
 import { fetchStudyTalk, type StudyTalkFile } from '@/lib/studyData';
 import { useStore } from '@/store';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import {
   AnalyzedText,
   Attribution,
@@ -65,19 +65,29 @@ export default function StudyResult() {
 function ResultTabs({ talk }: { talk: StudyTalkFile }) {
   const wordFreq = levelToWordFreq(talk.level);
 
-  const view = buildResultView({
-    source: 'study',
-    simplifiedText: talk.simplified,
-    wordFreq,
-    keyTerms: talk.key_terms,
-    keptWords: talk.kept_words,
-    talkId: talk.talk_id,
-    engineVersion: talk.engine_version,
-    configId: talk.config_id,
-    run: talk.run,
-  });
+  // analyzeChunks runs a full NLP pass — compute it once per talk, not on
+  // every render (a mounted ResultTabs re-renders for reasons unrelated to
+  // the talk itself, e.g. sidebar state).
+  const view = useMemo(
+    () =>
+      buildResultView({
+        source: 'study',
+        simplifiedText: talk.simplified,
+        wordFreq,
+        keyTerms: talk.key_terms,
+        keptWords: talk.kept_words,
+        talkId: talk.talk_id,
+        engineVersion: talk.engine_version,
+        configId: talk.config_id,
+        run: talk.run,
+      }),
+    [talk, wordFreq]
+  );
 
-  const originalAnalyzed = analyzeChunks([talk.original], wordFreq);
+  const originalAnalyzed = useMemo(
+    () => analyzeChunks([talk.original], wordFreq),
+    [talk, wordFreq]
+  );
 
   return (
     <Tabs defaultValue='simplified' className='w-full h-full'>

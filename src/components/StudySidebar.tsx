@@ -121,7 +121,7 @@ export function StudySidebarPanel() {
             </div>
           )}
 
-          <ScrollArea className='flex-1'>
+          <ScrollArea className='flex-1 min-h-0'>
             <ul className='flex flex-col'>
               {manifest?.talks.map((talk) => {
                 const isOpen = talk.id === studyTalkId;

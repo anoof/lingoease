@@ -9,10 +9,21 @@ const word2000Set = new Set(word2000);
 // Unlike the 1000/2000 lists (bare arrays), 3000.json is `{ words, model }`.
 const word3000Set = new Set((word3000 as { words: string[] }).words);
 
+// Building a wink-nlp instance loads its full lexicon — expensive enough
+// that doing it per call (especially client-side, per render) can exhaust
+// memory. Build it once and reuse it for every analyzeChunks call.
+let nlpInstance: ReturnType<typeof winkNLP> | null = null;
+function getNlp() {
+  if (!nlpInstance) {
+    nlpInstance = winkNLP(model);
+  }
+  return nlpInstance;
+}
+
 export function analyzeChunks(chunks: string[], wordFreq: 1000 | 2000 | 3000) {
   const wordSet =
     wordFreq === 1000 ? word1000Set : wordFreq === 2000 ? word2000Set : word3000Set;
-  const nlp = winkNLP(model);
+  const nlp = getNlp();
   const { its, as } = nlp;
 
   const lemmaFunc = its.lemma as TokenItsFunction<string>;
