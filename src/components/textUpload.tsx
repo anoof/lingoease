@@ -3,7 +3,7 @@
 import { segment } from '@/actions/llm/segment';
 import { simplify } from '@/actions/llm/simplify';
 import { tts } from '@/actions/llm/tts';
-import { analyzeChunks } from '@/actions/llm/utils';
+import { buildResultView } from '@/lib/resultView';
 import { useStore } from '@/store';
 import { useState, useTransition } from 'react';
 import { toast } from 'sonner';
@@ -25,7 +25,10 @@ export default function TextUpload({
 }: {
   children: React.ReactNode;
 }) {
-  const wordFreq = useStore((state) => state.outputOptions.level.wordFreq) as 1000 | 2000;
+  const wordFreq = useStore((state) => state.outputOptions.level.wordFreq) as
+    | 1000
+    | 2000
+    | 3000;
   const voice = useStore((state) => state.outputOptions.voice);
   const style = useStore((state) => state.outputOptions.style);
 
@@ -57,7 +60,8 @@ export default function TextUpload({
         console.log('------------- chunks ------------- ');
         console.log(chunks);
 
-        const lexLevel = wordFreq === 1000 ? '1k' : '2k';
+        const lexLevel =
+          wordFreq === 1000 ? '1k' : wordFreq === 2000 ? '2k' : '3k';
 
         // Analyze the chunks
         // const analysisRes = await analyzeAndFindCandidateWords(
@@ -70,24 +74,16 @@ export default function TextUpload({
         // setOriginalChunks(analysisRes.analyzedChunks);
 
         setSimplificationProgress('Simplifying the scripts...');
-        const simplified = await simplify(
+        const simplifyResp = await simplify(
           chunks.map((text) => ({ text, newWords: [] })),
           lexLevel
         );
         console.log('------------- simplified ------------- ');
-        console.log(simplified);
-
-        console.log('------------- analyzeSimplified ------------- ');
-
-        const analyzedSimplifiedChunks = analyzeChunks(simplified, wordFreq);
-
-        console.log(analyzedSimplifiedChunks);
+        console.log(simplifyResp);
 
         setSimplificationProgress('Generating audio...');
 
-        const simplifiedContent = simplified.join(' ');
-
-        const ttsResp = await tts(simplifiedContent, { voice, style });
+        const ttsResp = await tts(simplifyResp.simplified, { voice, style });
 
         if (!ttsResp) {
           console.error('TTS failed');
@@ -99,19 +95,25 @@ export default function TextUpload({
 
         setSimplificationProgress('');
 
-        // const url = `/api/tts?content=${encodeURIComponent(simplifiedContent)}`;
-        // const url = `https://gggr3f0tgjgai8sk.public.blob.vercel-storage.com/ted1-aIKJe4NgUrJmb2e7wxFShGE3Xj6PmC.mp3`;
-
-        // const downloadUrl = '';
+        const view = buildResultView({
+          source: 'live',
+          simplifiedText: simplifyResp.simplified,
+          wordFreq,
+          keyTerms: simplifyResp.key_terms,
+          keptWords: simplifyResp.kept_words,
+          audio: { url, downloadUrl },
+        });
 
         setIsOpen(false);
         setSimplifiedResult({
           url,
           downloadUrl,
-          simplifiedText: analyzedSimplifiedChunks.analyzedChunks,
-          totalLemmasCount: analyzedSimplifiedChunks.totalLemmasCount,
-          totalNewWordsCount: analyzedSimplifiedChunks.totalNewWordsCount,
-          newWordsRate: analyzedSimplifiedChunks.newWordsRate,
+          simplifiedText: view.simplifiedChunks,
+          totalLemmasCount: view.totalLemmasCount,
+          totalNewWordsCount: view.totalNewWordsCount,
+          newWordsRate: view.newWordsRate,
+          keyTerms: view.keyTerms,
+          keptWords: view.keptWords,
         });
         updateCurrentStep();
       } catch (error) {

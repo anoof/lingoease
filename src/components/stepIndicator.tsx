@@ -9,15 +9,28 @@ import { toast } from 'sonner';
 import AudioVideoUpload from './audioAudioUpload';
 import Keyconfig from './keyconfig';
 import SimplifiedResult from './SimplifiedResult';
+import StudyResult from './StudyResult';
 import TextUpload from './textUpload';
 import { Toaster } from './ui/sonner';
 
 export default function StepIndicator() {
   const currentStep = useStore((state) => state.currentStep);
   const simplifiedResult = useStore((state) => state.simplifiedResult);
+  const studyTalkId = useStore((state) => state.studyTalkId);
   const selectedContentType = useStore((state) => state.uploadContentType);
 
   useAPIKeysValidation();
+
+  // A Study Talk in the URL overrides the normal step flow, regardless of
+  // currentStep or whether an API key is set. See CONTEXT.md: Study Result.
+  if (studyTalkId) {
+    return (
+      <div className='flex flex-1 flex-col items-center justify-center w-full'>
+        <Toaster />
+        <StudyResult />
+      </div>
+    );
+  }
 
   const stepInfo = [
     {

@@ -2,6 +2,7 @@
 import React from 'react';
 
 import { useStore } from '@/store';
+import { StudyTextsToggle } from './StudySidebar';
 import { Toaster } from './ui/sonner';
 
 export default function Header() {
@@ -18,8 +19,11 @@ export default function Header() {
   }, [state]);
 
   return (
-    <div className='flex w-full h-36 flex-col items-center justify-end'>
+    <div className='relative flex w-full h-36 flex-col items-center justify-end'>
       <Toaster />
+      <div className='absolute left-4 top-4'>
+        <StudyTextsToggle />
+      </div>
       <div className=''>
         <div className='text-4xl font-bold' onClick={() => console.log(state)}>
           LingoEase

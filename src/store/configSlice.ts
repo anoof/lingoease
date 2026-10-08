@@ -41,6 +41,20 @@ export const createConfigSlice: StateCreator<
   },
   originalChunks: [],
   simplifiedResult: null,
+  studyTalkId: null,
+  studyLevel: null,
+  studySidebarOpen: false,
+  setStudyParams: (talkId, level) => {
+    set((state) => {
+      state.studyTalkId = talkId;
+      state.studyLevel = level;
+    });
+  },
+  setStudySidebarOpen: (open) => {
+    set((state) => {
+      state.studySidebarOpen = open;
+    });
+  },
   simplificationProgress: {
     message: '',
     number: 0,
@@ -135,6 +149,8 @@ export const createConfigSlice: StateCreator<
     totalLemmasCount,
     totalNewWordsCount,
     newWordsRate,
+    keyTerms,
+    keptWords,
   }) => {
     set((state) => {
       state.simplifiedResult = {
@@ -144,6 +160,8 @@ export const createConfigSlice: StateCreator<
         totalLemmasCount,
         totalNewWordsCount,
         newWordsRate,
+        keyTerms: keyTerms ?? [],
+        keptWords: keptWords ?? [],
       };
     });
   },

@@ -8,6 +8,9 @@ type SimplificationProgressMessage =
   | 'Generating audio...'
   | '';
 
+// Repeated topic words the backend kept on purpose at the current level.
+export type KeyTerm = { word: string; count: number };
+
 export type ConfigSlice = {
   activeApiKeyId: string;
   apikeys: ApiKey[];
@@ -31,7 +34,18 @@ export type ConfigSlice = {
     totalLemmasCount: number;
     totalNewWordsCount: number;
     newWordsRate: string;
+    keyTerms: KeyTerm[];
+    keptWords: string[];
   } | null;
+
+  // Study Talk viewing — mirrored from the `?talk=&level=` URL params, independent
+  // of currentStep. See CONTEXT.md: Study Talk / Study Result.
+  studyTalkId: string | null;
+  studyLevel: string | null;
+  studySidebarOpen: boolean;
+  setStudyParams: (talkId: string | null, level: string | null) => void;
+  setStudySidebarOpen: (open: boolean) => void;
+
   development?: boolean;
   setDevelopment?: (dev: boolean) => void;
   selectApiKey: (id: string) => void;
@@ -51,6 +65,8 @@ export type ConfigSlice = {
     url,
     downloadUrl,
     simplifiedText,
+    keyTerms,
+    keptWords,
   }: {
     url: string;
     downloadUrl: string;
@@ -61,6 +77,8 @@ export type ConfigSlice = {
     totalLemmasCount: number;
     totalNewWordsCount: number;
     newWordsRate: string;
+    keyTerms?: KeyTerm[];
+    keptWords?: string[];
   }) => void;
   resetAll: () => void;
   setSimplificationProgress: (message: SimplificationProgressMessage) => void;
@@ -79,6 +97,7 @@ export const OUTPUT_LEVELS = [
   // { level: 'Beginner', wordFreq: 500 },
   { level: 'Elementary', wordFreq: 1000 },
   { level: 'Pre-Intermediate', wordFreq: 2000 },
+  { level: 'Intermediate', wordFreq: 3000 },
 ] as const;
 export type OutputLevel = (typeof OUTPUT_LEVELS)[number];
 

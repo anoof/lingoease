@@ -2,22 +2,18 @@ import { useStore } from '@/store';
 
 import { analyze } from '@/actions/llm/analyze';
 import { useEffect, useMemo, useState } from 'react';
-import Highlighter, { HighlighterProps } from 'react-highlight-words';
+import { AnalyzedText, CoverageLine, KeyTermsSection } from './resultParts';
 import AudioPlayer from './ui/audioPlayer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 
+// Renders a Live Result (a real /simplify call) — a Study Result renders
+// through StudyResult instead. See CONTEXT.md.
 export default function SimplifiedResult() {
   const simplifiedResult = useStore((state) => state.simplifiedResult);
   return (
     <div className='flex flex-col items-center justify-center w-full px-8 overscroll-none'>
       {simplifiedResult && <ResultTabs />}
     </div>
-  );
-}
-
-function Highlight({ children, highlightIndex }: HighlighterProps) {
-  return (
-    <strong className='highlighted-text text-orange-500'>{children}</strong>
   );
 }
 
@@ -66,39 +62,20 @@ function SimplifiedTabContent() {
   return (
     simplifiedResult && (
       <div className='flex items-center justify-center flex-col'>
-        <div className='flex w-full items-center justify-center py-2 px-4'>
-          Vocabulary Coverage:{' '}
-          <span className='font-bold'>
-            {(1 - Number(simplifiedResult.newWordsRate)) * 100}%
-          </span>
-        </div>
+        <CoverageLine newWordsRate={simplifiedResult.newWordsRate} />
         <div className='flex  flex-col text-md mb-4 flex-1 w-full gap-4'>
-          {simplifiedResult.audioFileUrl && <AudioPlayer
-            src={simplifiedResult.audioFileUrl}
-            title='Simplified Audio'
-            downloadUrl={simplifiedResult.audioDownloadUrl}
-          />}
-          <div className='h-[calc(100dvh-30rem)] w-full rounded-md p-4 overflow-y-auto overscroll-none'>
-            {analysedText?.analyzedChunks.map(
-              ({ text, newWords, lemmasOriginalWordsMap }, index) => (
-                <div className='mb-6 select-text' key={index}>
-                  <Highlighter
-                    highlightClassName='YourHighlightClass'
-                    searchWords={newWords.map(
-                      (word) =>
-                        new RegExp(
-                          `\\b${lemmasOriginalWordsMap.get(word) ?? ''}\\b`,
-                          'i'
-                        )
-                    )}
-                    autoEscape={false}
-                    textToHighlight={text}
-                    highlightTag={Highlight}
-                  />
-                </div>
-              )
-            )}
-          </div>
+          {simplifiedResult.audioFileUrl && (
+            <AudioPlayer
+              src={simplifiedResult.audioFileUrl}
+              title='Simplified Audio'
+              downloadUrl={simplifiedResult.audioDownloadUrl}
+            />
+          )}
+          {analysedText && <AnalyzedText chunks={analysedText.analyzedChunks} />}
+          <KeyTermsSection
+            keyTerms={simplifiedResult.keyTerms}
+            keptWords={simplifiedResult.keptWords}
+          />
         </div>
       </div>
     )
@@ -143,27 +120,7 @@ function OriginalTabContent() {
             type={file.type}
           />
 
-          <div className='h-[calc(100dvh-30rem)] w-full rounded-md p-4 overflow-y-auto overscroll-none'>
-            {analysedText?.analyzedChunks.map(
-              ({ text, newWords, lemmasOriginalWordsMap }, index) => (
-                <div className='mb-6 select-text' key={index}>
-                  <Highlighter
-                    highlightClassName='YourHighlightClass'
-                    searchWords={newWords.map(
-                      (word) =>
-                        new RegExp(
-                          `\\b${lemmasOriginalWordsMap.get(word) ?? ''}\\b`,
-                          'i'
-                        )
-                    )}
-                    autoEscape={false}
-                    textToHighlight={text}
-                    highlightTag={Highlight}
-                  />
-                </div>
-              )
-            )}
-          </div>
+          {analysedText && <AnalyzedText chunks={analysedText.analyzedChunks} />}
         </div>
       </div>
     )

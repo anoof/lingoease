@@ -1,0 +1,36 @@
+{
+ "talk_id": "Fkd9TWUtFm0",
+ "original": "Translator: Joseph Geni Reviewer: Thu-Huong Ha I've always had a fascination for computers and technology, and I made a few apps for the iPhone, iPod touch, and iPad. I'd like to share a couple with you today. My first app was a unique fortune teller called \"Earth Fortune\" that would display different colors of Earth depending on what your fortune was. My favorite and most successful app is \"Bustin Jieber,\" which is -- (Laughter) which is a Justin Bieber whack-a-mole. (Laughter) I created it because a lot of people at school disliked Justin Bieber a little bit, so I decided to make the app. So I went to work programming it, and I released it just before the holidays in 2010. A lot of people ask me, how did I make these? A lot of times it's because the person who asked the question wants to make an app also. A lot of kids these days like to play games, but now they want to make them, and it's difficult, because not many kids know where to go to find out how to make a program. I mean, for soccer, you could go to a soccer team. For violin, you could get lessons for a violin. But what if you want to make an app? And the kid's parents might have done some of these things when they were young, but not many parents have written apps. (Laughter) Where do you go to find out how to make an app? Well, this is how I approached it, this is what I did. First of all, I've been programming in multiple other programming languages to get the basics down, such as Python, C, Java, etc. And then Apple released the iPhone, and with it, the iPhone software development kit, and the software development kit is a suite of tools for creating and programming an iPhone app. This opened up a whole new world of possibilities for me, and after playing with the software development kit a little bit, I made a couple of apps, I made some test apps. One of them happened to be \"Earth Fortune,\" and I was ready to put \"Earth Fortune\" on the App Store, and so I persuaded my parents to pay the 99 dollar fee to be able to put my apps on the App Store. They agreed, and now I have apps on the App Store. I've gotten a lot of interest and encouragement from my family, friends, teachers and even people at the Apple Store, and that's been a huge help to me. I've gotten a lot of inspiration from Steve Jobs, and I've started an app club at school, and a teacher at my school is kindly sponsoring my app club. Any student at my school can come and learn how to design an app. This is so I can share my experiences with others. There's these programs called the iPad Pilot Program, and some districts have them. I'm fortunate enough to be part of one. A big challenge is, how should the iPads be used, and what apps should we put on the iPads? So we're getting feedback from teachers at the school to see what kind of apps they'd like. When we design the app and we sell it, it will be free to local districts; and other districts that we sell to -- all the money from that will go into the local ed foundations. These days, students usually know a little bit more than teachers with the technology. (Laughter) So -- (Laughter) Sorry. (Laughter) So this is a resource to teachers, and educators should recognize this resource and make good use of it. (Laughter) I'd like to finish up by saying what I'd like to do in the future. First of all, I'd like to create more apps, more games. I'm working with a third party company to make an app. I'd like to get into Android programming and development, and I'd like to continue my app club, and find other ways for students to share knowledge with others. Thank you. (Applause)",
+ "simplified": "I have always loved computers and technology. I made a few apps for the iPhone, iPod touch, and iPad. I want to share some with you today. My first app was called \"Earth Fortune.\" It showed different colors of Earth based on your fortune. My favorite app is \"Bustin Jieber,\" which is a game where you hit Justin Bieber characters. I made it because many kids at school didn't like Justin Bieber, so I thought it would be fun. I worked hard on it and released it just before the holidays in 2010.\n\n  Many people ask me how I made these apps because they want to make their own. Kids today love playing games, but they also want to create them. It can be hard because not many kids know where to learn how to make an app. For football, you can join a team. For piano, you can take lessons. But where do you go to learn about making apps? Most parents haven't made apps either.\n\n  Here’s how I did it. First, I learned different programming languages like Python, C, and Java. Then Apple released the iPhone and the iPhone software development kit, which has tools for making apps. This opened up many possibilities for me. After trying out the tool, I made some test apps, including \"Earth Fortune.\" I convinced my parents to pay the 99-dollar price to put my apps on the App Store, and now my apps are available there. I have received a lot of support from my family, friends, teachers, and even people at the Apple Store. This has helped me a lot. I am impressed by Steve Jobs, and I started an app club at my school, with a teacher helping me. Any student can come to learn how to design an app, so I can share my experiences.\n\n  There are programs like the iPad Pilot Program in some school districts, and I am lucky to be part of one. A big challenge is deciding how to use the iPads and what apps to put on them. We are getting comments from teachers about what apps they want. When we design an app and sell it, it will be free for local districts, and money from other sales will go to local education funds. These days, students often know more about technology than teachers. This can be a supply for teachers, and they should use it well. In the future, I want to create more apps and games. I am working with a company to make an app. I also want to learn Android programming and keep my app club going, helping students share knowledge. Thank you.",
+ "coverage": 0.9323,
+ "level": "2k",
+ "coverage_key_terms_known": 0.9481,
+ "key_terms": [
+  {
+   "word": "app",
+   "count": 8
+  }
+ ],
+ "kept_words": [],
+ "protected_phrases": [
+  "Android programming",
+  "app club",
+  "App Store",
+  "Bustin Jieber",
+  "Earth Fortune",
+  "iPad Pilot Program",
+  "software development kit"
+ ],
+ "stats": {
+  "accepted": 8,
+  "vetoed": 0,
+  "key_term_tokens": 7,
+  "kept_word_tokens": 0,
+  "original_words": 702,
+  "simplified_words": 446
+ },
+ "engine_version": "v5-2026-10-08",
+ "config_id": "7f4ba286ad7f",
+ "run": "v5_floor_targets_2k",
+ "cached": true
+}

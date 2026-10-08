@@ -3,7 +3,7 @@
 import { segment } from '@/actions/llm/segment';
 import { simplify } from '@/actions/llm/simplify';
 import { tts } from '@/actions/llm/tts';
-import { analyzeChunks } from '@/actions/llm/utils';
+import { buildResultView } from '@/lib/resultView';
 import { useStore } from '@/store';
 import { useState, useTransition } from 'react';
 import { FaQuestionCircle } from 'react-icons/fa';
@@ -104,7 +104,8 @@ export default function AudioVideoUpload({
 
         setSimplificationProgress('Analyzing the scripts...');
 
-        const lexLevel = wordFreq === 1000 ? '1k' : '2k';
+        const lexLevel =
+          wordFreq === 1000 ? '1k' : wordFreq === 2000 ? '2k' : '3k';
 
         // Analyze the chunks
         // const analysisRes = await analyzeAndFindCandidateWords(
@@ -118,25 +119,17 @@ export default function AudioVideoUpload({
         setOriginalChunks(chunks.map((text) => ({ text, newWords: [] })));
 
         setSimplificationProgress('Simplifying the scripts...');
-        const simplified = await simplify(
+        const simplifyResp = await simplify(
           chunks.map((text) => ({ text, newWords: [] })),
           lexLevel
         );
 
         console.log('------------- simplified ------------- ');
-        console.log(simplified);
-
-        console.log('------------- analyzeSimplified ------------- ');
-
-        const analyzedSimplifiedChunks = analyzeChunks(simplified, wordFreq);
-
-        console.log(analyzedSimplifiedChunks);
+        console.log(simplifyResp);
 
         setSimplificationProgress('Generating audio...');
 
-        const simplifiedContent = simplified.join(' ');
-
-        const ttsResp = await tts(simplifiedContent, { voice, style });
+        const ttsResp = await tts(simplifyResp.simplified, { voice, style });
 
         if (!ttsResp) {
           console.error('TTS failed');
@@ -147,14 +140,26 @@ export default function AudioVideoUpload({
         const { url, downloadUrl } = ttsResp;
 
         setSimplificationProgress('');
+
+        const view = buildResultView({
+          source: 'live',
+          simplifiedText: simplifyResp.simplified,
+          wordFreq,
+          keyTerms: simplifyResp.key_terms,
+          keptWords: simplifyResp.kept_words,
+          audio: { url, downloadUrl },
+        });
+
         setIsOpen(false);
         setSimplifiedResult({
           url,
           downloadUrl,
-          simplifiedText: analyzedSimplifiedChunks.analyzedChunks,
-          totalLemmasCount: analyzedSimplifiedChunks.totalLemmasCount,
-          totalNewWordsCount: analyzedSimplifiedChunks.totalNewWordsCount,
-          newWordsRate: analyzedSimplifiedChunks.newWordsRate,
+          simplifiedText: view.simplifiedChunks,
+          totalLemmasCount: view.totalLemmasCount,
+          totalNewWordsCount: view.totalNewWordsCount,
+          newWordsRate: view.newWordsRate,
+          keyTerms: view.keyTerms,
+          keptWords: view.keptWords,
         });
         updateCurrentStep();
 
@@ -221,7 +226,11 @@ export default function AudioVideoUpload({
               Remove
             </Button>
           )}
-          <Button className='flex-1' disabled={!file} onClick={startSimplify}>
+          <Button
+            className='flex-1'
+            disabled={!file || simplifying}
+            onClick={startSimplify}
+          >
             {!file ? (
               'Simplify'
             ) : simplifying ? (
