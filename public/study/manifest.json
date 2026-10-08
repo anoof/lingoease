@@ -1,6 +1,6 @@
 {
- "engine_version": "v5-2026-10-08",
- "generated": "2026-10-08",
+ "engine_version": "v6-2026-10-09",
+ "generated": "2026-10-09",
  "level_labels": {
   "1k": "Elementary",
   "2k": "Pre-Intermediate",
@@ -8,17 +8,17 @@
  },
  "variants": {
   "key_terms_on": {
-   "config_id": "7f4ba286ad7f",
+   "config_id": "858d10334b60",
    "levels": {
-    "1k": "v5_floor_targets",
-    "2k": "v5_floor_targets_2k"
+    "1k": "v6_floor_targets",
+    "2k": "v6_floor_targets_2k"
    }
   },
   "key_terms_off": {
-   "config_id": "a85208b3019f",
+   "config_id": "534084832b6e",
    "levels": {
-    "1k": "v5_floor",
-    "2k": "v5_floor_2k"
+    "1k": "v6_floor",
+    "2k": "v6_floor_2k"
    }
   }
  },
@@ -27,6 +27,7 @@
    "id": "HYepzb4-FWI",
    "number": 1,
    "title": "How I Turned Frustration Into Creative Success",
+   "speaker": "Joshua Schachter",
    "source_url": "https://www.youtube.com/watch?v=HYepzb4-FWI",
    "preview": "So for many years I've been doing computer art, geometric art with pen and paper on plotters."
   },
@@ -34,6 +35,7 @@
    "id": "WknzP23-y_Y",
    "number": 2,
    "title": "Let Your Ambition Light You Up — Not Burn You Out",
+   "speaker": "Tarveen Forrester",
    "source_url": "https://www.youtube.com/watch?v=WknzP23-y_Y",
    "preview": "Like many of you, I was enamored by the hustle culture."
   },
@@ -41,6 +43,7 @@
    "id": "5MyCtvSBATI",
    "number": 3,
    "title": "The Multidimensional Magic of Modern Maps",
+   "speaker": "Peter Wilczynski",
    "source_url": "https://www.youtube.com/watch?v=5MyCtvSBATI",
    "preview": "I'm a digital cartographer by trade, and honestly, the last two, three, four presentations have been incredible."
   },
@@ -48,6 +51,7 @@
    "id": "-OAP0ho5AUg",
    "number": 4,
    "title": "How to Build the 3D World of Your Dreams with a Text Prompt",
+   "speaker": "Kiran Bhat",
    "source_url": "https://www.youtube.com/watch?v=-OAP0ho5AUg",
    "preview": "I'm excited to present a new way to design 3D games with AI."
   },
@@ -55,13 +59,15 @@
    "id": "H14bBuluwB8",
    "number": 5,
    "title": "Grit: The Power of Passion and Perseverance",
+   "speaker": "Angela Lee Duckworth",
    "source_url": "https://www.youtube.com/watch?v=H14bBuluwB8",
    "preview": "Transcriber: Joseph Geni Reviewer: Morton Bast When I was 27 years old, I left a very demanding job in management consul"
   },
   {
    "id": "rSQNi5sAwuc",
    "number": 6,
-   "title": "How to Control Someone Else’s Arm with Your Brain",
+   "title": "How to Control Someone Else's Arm with Your Brain",
+   "speaker": "Greg Gage",
    "source_url": "https://www.youtube.com/watch?v=rSQNi5sAwuc",
    "preview": "The brain is an amazing and complex organ."
   },
@@ -69,6 +75,7 @@
    "id": "ZmNpeXTj2c4",
    "number": 7,
    "title": "The Secret to Telling a Great Story — in Less Than 60 Seconds",
+   "speaker": "Jenny Hoyos",
    "source_url": "https://www.youtube.com/watch?v=ZmNpeXTj2c4",
    "preview": "Have you ever wondered how much ice cream you can get for a dollar?"
   },
@@ -76,6 +83,7 @@
    "id": "Y6bbMQXQ180",
    "number": 8,
    "title": "Secrets of Success in 8 Words, 3 Minutes",
+   "speaker": "Richard St. John",
    "source_url": "https://www.youtube.com/watch?v=Y6bbMQXQ180",
    "preview": "This is really a two-hour presentation I give to high school students, cut down to three minutes."
   },
@@ -83,6 +91,7 @@
    "id": "fQUeDdaVoWo",
    "number": 9,
    "title": "Do You Really Need 8 Hours of Sleep Every Night?",
+   "speaker": "Dr. Jen Gunter",
    "source_url": "https://www.youtube.com/watch?v=fQUeDdaVoWo",
    "preview": "Sleep is so important."
   },
@@ -90,6 +99,7 @@
    "id": "NHopJHSlVo4",
    "number": 10,
    "title": "Keep Your Goals to Yourself",
+   "speaker": "Derek Sivers",
    "source_url": "https://www.youtube.com/watch?v=NHopJHSlVo4",
    "preview": "Everyone, please think of your biggest personal goal."
   },
@@ -97,20 +107,23 @@
    "id": "bNpx7gpSqbY",
    "number": 11,
    "title": "The Single Biggest Reason Why Start-ups Succeed",
+   "speaker": "Bill Gross",
    "source_url": "https://www.youtube.com/watch?v=bNpx7gpSqbY",
    "preview": "I'm really excited to share with you some findings that really surprise me about what makes companies  succeed the most,"
   },
   {
    "id": "DESCcjSQSKY",
    "number": 12,
-   "title": "A Cleanse Won’t Detox Your Body – but Here’s What Will",
+   "title": "A Cleanse Won't Detox Your Body – but Here's What Will",
+   "speaker": "Dr. Jen Gunter",
    "source_url": "https://www.youtube.com/watch?v=DESCcjSQSKY",
    "preview": "Transcriber: \"Should I do a cleanse?\" I hear people asking this question a lot."
   },
   {
    "id": "xsEJ6GeAGb0",
    "number": 13,
-   "title": "What’s Normal Anxiety – and What’s an Anxiety Disorder?",
+   "title": "What's Normal Anxiety – and What's an Anxiety Disorder?",
+   "speaker": "Dr. Jen Gunter",
    "source_url": "https://www.youtube.com/watch?v=xsEJ6GeAGb0",
    "preview": "Transcriber: We live in a culture that doesn't take mental health issues seriously."
   },
@@ -118,6 +131,7 @@
    "id": "6ibCtsHgz3Y",
    "number": 14,
    "title": "How Books Can Open Your Mind",
+   "speaker": "Lisa Bu",
    "source_url": "https://www.youtube.com/watch?v=6ibCtsHgz3Y",
    "preview": "Transcriber: Joseph Geni Reviewer: Morton Bast So I was trained to become a gymnast for two years in Hunan, China in the"
   },
@@ -125,6 +139,7 @@
    "id": "XqUOgqlZ8bc",
    "number": 15,
    "title": "A Mysterious Design That Appears Across Millennia",
+   "speaker": "Terry Moore",
    "source_url": "https://www.youtube.com/watch?v=XqUOgqlZ8bc",
    "preview": "This is Roger Penrose."
   },
@@ -132,6 +147,7 @@
    "id": "NiKtZgImdlY",
    "number": 16,
    "title": "The Danger of Silence",
+   "speaker": "Clint Smith",
    "source_url": "https://www.youtube.com/watch?v=NiKtZgImdlY",
    "preview": "Dr."
   },
@@ -139,6 +155,7 @@
    "id": "8_zk2DpgLCs",
    "number": 17,
    "title": "3 Things I Learned While My Plane Crashed",
+   "speaker": "Ric Elias",
    "source_url": "https://www.youtube.com/watch?v=8_zk2DpgLCs",
    "preview": "Imagine a big explosion as you climb through 3,000 ft."
   },
@@ -146,6 +163,7 @@
    "id": "Fkd9TWUtFm0",
    "number": 18,
    "title": "A 12-Year-Old App Developer",
+   "speaker": "Thomas Suarez",
    "source_url": "https://www.youtube.com/watch?v=Fkd9TWUtFm0",
    "preview": "Translator: Joseph Geni Reviewer: Thu-Huong Ha I've always had a fascination for computers and technology, and I made a "
   },
@@ -153,6 +171,7 @@
    "id": "SjSHVDfXHQ4",
    "number": 19,
    "title": "The Magic of Fibonacci Numbers",
+   "speaker": "Arthur Benjamin",
    "source_url": "https://www.youtube.com/watch?v=SjSHVDfXHQ4",
    "preview": "So why do we learn mathematics?"
   },
@@ -160,6 +179,7 @@
    "id": "t0kACis_dJE",
    "number": 20,
    "title": "6 Tips for Better Sleep",
+   "speaker": "Matt Walker",
    "source_url": "https://www.youtube.com/watch?v=t0kACis_dJE",
    "preview": "Transcriber: Translate TED Reviewer: Ivana Korom We can all have a bad night of sleep and that's perfectly normal, but h"
   }
