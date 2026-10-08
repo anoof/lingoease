@@ -5,12 +5,7 @@ import { buildResultView } from '@/lib/resultView';
 import { fetchStudyTalk, type StudyTalkFile } from '@/lib/studyData';
 import { useStore } from '@/store';
 import { useEffect, useMemo, useState } from 'react';
-import {
-  AnalyzedText,
-  Attribution,
-  CoverageLine,
-  KeyTermsSection,
-} from './resultParts';
+import { AnalyzedText, CoverageLine, KeyTermsSection } from './resultParts';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 
 // Renders a Study Result — a precomputed Study Talk opened from the sidebar.
@@ -76,10 +71,6 @@ function ResultTabs({ talk }: { talk: StudyTalkFile }) {
         wordFreq,
         keyTerms: talk.key_terms,
         keptWords: talk.kept_words,
-        talkId: talk.talk_id,
-        engineVersion: talk.engine_version,
-        configId: talk.config_id,
-        run: talk.run,
       }),
     [talk, wordFreq]
   );
@@ -105,7 +96,6 @@ function ResultTabs({ talk }: { talk: StudyTalkFile }) {
           <div className='flex flex-col text-md mb-4 flex-1 w-full gap-4'>
             <AnalyzedText chunks={view.simplifiedChunks} />
             <KeyTermsSection keyTerms={view.keyTerms} keptWords={view.keptWords} />
-            {view.attribution && <Attribution attribution={view.attribution} />}
           </div>
         </div>
       </TabsContent>

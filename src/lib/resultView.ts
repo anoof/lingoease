@@ -14,12 +14,6 @@ export type ResultView = {
   keyTerms: KeyTerm[];
   keptWords: string[];
   audio?: { url: string; downloadUrl: string };
-  attribution?: {
-    talkId: string;
-    engineVersion: string;
-    configId: string;
-    run: string;
-  };
 };
 
 type ResultInput = {
@@ -29,13 +23,7 @@ type ResultInput = {
   keptWords?: string[];
 } & (
   | { source: 'live'; audio: { url: string; downloadUrl: string } }
-  | {
-      source: 'study';
-      talkId: string;
-      engineVersion: string;
-      configId: string;
-      run: string;
-    }
+  | { source: 'study' }
 );
 
 export function buildResultView(input: ResultInput): ResultView {
@@ -54,14 +42,5 @@ export function buildResultView(input: ResultInput): ResultView {
     return { ...base, source: 'live', audio: input.audio };
   }
 
-  return {
-    ...base,
-    source: 'study',
-    attribution: {
-      talkId: input.talkId,
-      engineVersion: input.engineVersion,
-      configId: input.configId,
-      run: input.run,
-    },
-  };
+  return { ...base, source: 'study' };
 }

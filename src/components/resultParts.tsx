@@ -77,15 +77,3 @@ export function KeyTermsSection({
     </div>
   );
 }
-
-export function Attribution({
-  attribution,
-}: {
-  attribution: NonNullable<ResultView['attribution']>;
-}) {
-  return (
-    <div className='w-full px-4 pb-2 text-xs text-muted-foreground'>
-      {attribution.engineVersion} · {attribution.configId} · {attribution.run}
-    </div>
-  );
-}
