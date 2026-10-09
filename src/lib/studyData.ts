@@ -33,7 +33,7 @@ export type StudyTalkFile = {
 
 // Fixed per deployment — no in-app switch (FRONTEND_BRIEF.md change 4).
 export function getStudyVariant(): string {
-  return process.env.NEXT_PUBLIC_STUDY_VARIANT || 'key_terms_on';
+  return process.env.NEXT_PUBLIC_STUDY_VARIANT || 'key_terms_off';
 }
 
 // Sidebar and footer both need this; memoize so opening a talk doesn't
