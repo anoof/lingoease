@@ -46,7 +46,14 @@ def surface_labels(lemmas, *texts):
 CUES = re.compile(r"\([^()]{0,40}\)|\[[^\[\]]{0,40}\]|♪+")
 def clean_transcript(t):
     t = re.sub(r"^\s*Transcriber:.*?Reviewer:\s*\S+(?:\s+\S+)?\s+", "", str(t), flags=re.S)
+    t = re.sub(r"^\s*Transcriber:\s*", "", t)   # some talks have the label but no Reviewer credit
     return re.sub(r"\s+", " ", CUES.sub(" ", t)).strip()
+
+def clean_simplified(t):
+    """The LLM sometimes emits markdown emphasis (**word**); the study text is plain prose."""
+    t = re.sub(r"\*+", "", str(t))
+    assert "*" not in t
+    return t
 
 def parse_list(s, num=float):
     out = []
@@ -61,7 +68,7 @@ def build(run_csvs, transcripts_xlsx, out_dir):
     titles = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "titles.json"), encoding="utf-8"))
     talks = []
     for i, r in meta.iterrows():
-        first = re.split(r"(?<=[.!?])\s+", str(r.transcript_text).strip())[0]
+        first = re.split(r"(?<=[.!?])\s+", clean_transcript(r.transcript_text))[0]
         title, speaker = titles.get(r.talk_id, ["", ""])
         talks.append({"id": r.talk_id, "number": i + 1, "title": title, "speaker": speaker,
                       "source_url": r.source_url, "preview": first[:120]})
@@ -79,7 +86,7 @@ def build(run_csvs, transcripts_xlsx, out_dir):
             os.makedirs(f"{out_dir}/{variant}/{level}", exist_ok=True)
             for t in talks:
                 r = d.loc[t["id"]]
-                final = str(r.rag_final)
+                final = clean_simplified(r.rag_final)
                 mwes = [p for p in str(r.mwes).split("; ") if p and p != "nan"]
                 kt = parse_list(r.targets, int) if use_kt else []
                 kw = [w for w, _ in parse_list(r.floor_words)]

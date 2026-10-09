@@ -22,10 +22,14 @@ export function AnalyzedText({
         <div className='mb-6 select-text' key={index}>
           <Highlighter
             highlightClassName='YourHighlightClass'
-            searchWords={newWords.map(
-              (word) =>
-                new RegExp(`\\b${lemmasOriginalWordsMap.get(word) ?? ''}\\b`, 'i')
-            )}
+            searchWords={newWords.flatMap((word) => {
+              // Tokens like "**" (stray markdown in the text) are regex syntax;
+              // escape them, and skip anything with no word character.
+              const original = lemmasOriginalWordsMap.get(word) ?? '';
+              if (!/\w/.test(original)) return [];
+              const escaped = original.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+              return [new RegExp(`\\b${escaped}\\b`, 'i')];
+            })}
             autoEscape={false}
             textToHighlight={text}
             highlightTag={Highlight}
