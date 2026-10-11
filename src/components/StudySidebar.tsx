@@ -47,7 +47,7 @@ export function StudySidebarPanel() {
     fetchStudyManifest().then(setManifest).catch(() => setManifest(null));
   }, []);
 
-  // A direct link (or Previous/Next) can set the level from the URL —
+  // A direct link can set the level from the URL —
   // keep the sidebar's own selection in step with it.
   useEffect(() => {
     if (studyLevel) setSelectedLevel(studyLevel);

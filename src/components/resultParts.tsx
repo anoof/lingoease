@@ -9,15 +9,20 @@ export function Highlight({ children }: HighlighterProps) {
 
 export function AnalyzedText({
   chunks,
+  height,
 }: {
   chunks: {
     text: string;
     lemmasOriginalWordsMap: Map<string, string>;
     newWords: string[];
   }[];
+  height?: string;
 }) {
   return (
-    <div className='h-[calc(100dvh-30rem)] w-full rounded-md p-4 overflow-y-auto overscroll-none'>
+    <div
+      className='h-[calc(100dvh-30rem)] w-full min-w-0 rounded-md p-4 overflow-y-auto overscroll-none'
+      style={height ? { height } : undefined}
+    >
       {chunks.map(({ text, newWords, lemmasOriginalWordsMap }, index) => (
         <div className='mb-6 select-text' key={index}>
           <Highlighter

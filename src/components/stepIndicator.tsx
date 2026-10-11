@@ -25,7 +25,7 @@ export default function StepIndicator() {
   // currentStep or whether an API key is set. See CONTEXT.md: Study Result.
   if (studyTalkId) {
     return (
-      <div className='flex flex-1 flex-col items-center justify-center w-full'>
+      <div className='flex flex-1 flex-col items-center justify-start w-full'>
         <Toaster />
         <StudyResult />
       </div>

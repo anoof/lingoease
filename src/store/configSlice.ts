@@ -44,6 +44,12 @@ export const createConfigSlice: StateCreator<
   studyTalkId: null,
   studyLevel: null,
   studySidebarOpen: false,
+  studyLayout: 'sideBySide',
+  setStudyLayout: (layout) => {
+    set((state) => {
+      state.studyLayout = layout;
+    });
+  },
   setStudyParams: (talkId, level) => {
     set((state) => {
       state.studyTalkId = talkId;

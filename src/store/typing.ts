@@ -43,8 +43,10 @@ export type ConfigSlice = {
   studyTalkId: string | null;
   studyLevel: string | null;
   studySidebarOpen: boolean;
+  studyLayout: 'sideBySide' | 'tabs';
   setStudyParams: (talkId: string | null, level: string | null) => void;
   setStudySidebarOpen: (open: boolean) => void;
+  setStudyLayout: (layout: 'sideBySide' | 'tabs') => void;
 
   development?: boolean;
   setDevelopment?: (dev: boolean) => void;
