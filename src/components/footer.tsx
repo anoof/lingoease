@@ -9,6 +9,9 @@ import Upload from './upload';
 export default function Footer() {
   const currentStep = useStore((state) => state.currentStep);
   const resetAll = useStore((state) => state.resetAll);
+  const studyTalkId = useStore((state) => state.studyTalkId);
+
+  if (studyTalkId) return null;
 
   const renederStepContent = () => {
     switch (currentStep) {
