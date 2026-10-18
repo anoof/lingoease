@@ -97,24 +97,13 @@ export default function TextUpload({
 
         const view = buildResultView({
           source: 'live',
-          simplifiedText: simplifyResp.simplified,
-          wordFreq,
-          keyTerms: simplifyResp.key_terms,
-          keptWords: simplifyResp.kept_words,
+          data: simplifyResp,
+          original: chunks.join(' '),
           audio: { url, downloadUrl },
         });
 
         setIsOpen(false);
-        setSimplifiedResult({
-          url,
-          downloadUrl,
-          simplifiedText: view.simplifiedChunks,
-          totalLemmasCount: view.totalLemmasCount,
-          totalNewWordsCount: view.totalNewWordsCount,
-          newWordsRate: view.newWordsRate,
-          keyTerms: view.keyTerms,
-          keptWords: view.keptWords,
-        });
+        setSimplifiedResult(view);
         updateCurrentStep();
       } catch (error) {
         console.error('Error during simplification:', error);

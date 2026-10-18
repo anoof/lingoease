@@ -1,41 +1,64 @@
-import { analyzeChunks } from '@/actions/llm/utils';
+import type { Span } from '@/lib/highlight';
 import type { KeyTerm } from '@/store/typing';
 
 // The one seam between raw data (a live /simplify response, or a precomputed
 // Study Talk file) and what the result view renders. See CONTEXT.md: Live
-// Result / Study Result.
+// Result / Study Result. Highlights and coverage come from the backend.
 
 export type ResultView = {
   source: 'live' | 'study';
-  simplifiedChunks: ReturnType<typeof analyzeChunks>['analyzedChunks'];
-  newWordsRate: string;
-  totalLemmasCount: number;
-  totalNewWordsCount: number;
+  simplified: string;
+  spans: Span[];
+  coverage: number;
+  original: string;
+  originalSpans: Span[];
+  originalCoverage?: number;
   keyTerms: KeyTerm[];
   keptWords: string[];
+  protectedPhrases: string[];
   audio?: { url: string; downloadUrl: string };
 };
 
-type ResultInput = {
-  simplifiedText: string;
-  wordFreq: 1000 | 2000 | 3000;
-  keyTerms?: KeyTerm[];
-  keptWords?: string[];
-} & (
+// Fields shared by a /simplify response and a Study Talk file.
+export type ResultData = {
+  simplified: string;
+  coverage: number;
+  spans?: Span[];
+  original?: string;
+  original_spans?: Span[];
+  original_coverage?: number;
+  key_terms?: KeyTerm[];
+  kept_words?: string[];
+  protected_phrases?: string[];
+};
+
+type ResultInput = { data: ResultData; original?: string } & (
   | { source: 'live'; audio: { url: string; downloadUrl: string } }
   | { source: 'study' }
 );
 
+export function buildResultView(
+  input: ResultInput & { source: 'live' }
+): ResultView & { source: 'live' };
+export function buildResultView(
+  input: ResultInput & { source: 'study' }
+): ResultView & { source: 'study' };
 export function buildResultView(input: ResultInput): ResultView {
-  const analyzed = analyzeChunks([input.simplifiedText], input.wordFreq);
+  const { data } = input;
+  if (!data.spans) {
+    console.warn('No highlight spans in the result (backend older than v7) — text shown without highlights.');
+  }
 
   const base = {
-    simplifiedChunks: analyzed.analyzedChunks,
-    newWordsRate: analyzed.newWordsRate,
-    totalLemmasCount: analyzed.totalLemmasCount,
-    totalNewWordsCount: analyzed.totalNewWordsCount,
-    keyTerms: input.keyTerms ?? [],
-    keptWords: input.keptWords ?? [],
+    simplified: data.simplified,
+    spans: data.spans ?? [],
+    coverage: data.coverage,
+    original: data.original ?? input.original ?? '',
+    originalSpans: data.original_spans ?? [],
+    originalCoverage: data.original_coverage,
+    keyTerms: data.key_terms ?? [],
+    keptWords: data.kept_words ?? [],
+    protectedPhrases: data.protected_phrases ?? [],
   };
 
   if (input.source === 'live') {

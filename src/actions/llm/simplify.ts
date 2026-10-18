@@ -1,6 +1,7 @@
 'use server';
 
 import { cookies } from 'next/headers';
+import type { Span } from '@/lib/highlight';
 import type { KeyTerm } from '@/store/typing';
 
 const LEXSCAFFOLD_URL = process.env.LEXSCAFFOLD_URL ?? 'https://anoof-lexscaffold.hf.space';
@@ -12,6 +13,10 @@ export type SimplifyResponse = {
   key_terms?: KeyTerm[];
   kept_words?: string[];
   protected_phrases?: string[];
+  spans?: Span[];
+  original?: string;
+  original_spans?: Span[];
+  original_coverage?: number;
   coverage_key_terms_known?: number;
   stats?: Record<string, number>;
   engine_version?: string;

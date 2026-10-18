@@ -1,13 +1,18 @@
 import { useStore } from '@/store';
 
-import { analyze } from '@/actions/llm/analyze';
-import { useEffect, useMemo, useState } from 'react';
-import { AnalyzedText, CoverageLine, KeyTermsSection } from './resultParts';
+import { useMemo } from 'react';
+import {
+  CoverageLine,
+  HighlightLegend,
+  HighlightedText,
+  KeyTermsSection,
+} from './resultParts';
 import AudioPlayer from './ui/audioPlayer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 
 // Renders a Live Result (a real /simplify call) — a Study Result renders
-// through StudyResult instead. See CONTEXT.md.
+// through StudyResult instead. See CONTEXT.md. Highlights and coverage are the
+// backend's; nothing is analysed here.
 export default function SimplifiedResult() {
   const simplifiedResult = useStore((state) => state.simplifiedResult);
   return (
@@ -43,86 +48,48 @@ function ResultTabs() {
 }
 
 function SimplifiedTabContent() {
-  const simplifiedResult = useStore((state) => state.simplifiedResult);
-  const chunks = simplifiedResult?.simplifiedText.map((s) => s.text);
-
-  const wordFreq = useStore((state) => state.outputOptions.level.wordFreq);
-
-  const [analysedText, setAnalysedText] =
-    useState<Awaited<ReturnType<typeof analyze>>>();
-
-  useEffect(() => {
-    if (chunks) {
-      analyze(chunks, wordFreq).then((result) => {
-        setAnalysedText(result);
-      });
-    }
-  }, []);
+  const result = useStore((state) => state.simplifiedResult);
+  if (!result) return null;
 
   return (
-    simplifiedResult && (
-      <div className='flex items-center justify-center flex-col'>
-        <CoverageLine newWordsRate={simplifiedResult.newWordsRate} />
-        <div className='flex  flex-col text-md mb-4 flex-1 w-full gap-4'>
-          {simplifiedResult.audioFileUrl && (
-            <AudioPlayer
-              src={simplifiedResult.audioFileUrl}
-              title='Simplified Audio'
-              downloadUrl={simplifiedResult.audioDownloadUrl}
-            />
-          )}
-          {analysedText && <AnalyzedText chunks={analysedText.analyzedChunks} />}
-          <KeyTermsSection
-            keyTerms={simplifiedResult.keyTerms}
-            keptWords={simplifiedResult.keptWords}
+    <div className='flex items-center justify-center flex-col'>
+      <CoverageLine coverage={result.coverage} />
+      <div className='flex  flex-col text-md mb-4 flex-1 w-full gap-4'>
+        {result.audio?.url && (
+          <AudioPlayer
+            src={result.audio.url}
+            title='Simplified Audio'
+            downloadUrl={result.audio.downloadUrl}
           />
-        </div>
+        )}
+        <HighlightedText text={result.simplified} spans={result.spans} />
+        <HighlightLegend spans={result.spans} />
+        <KeyTermsSection
+          keyTerms={result.keyTerms}
+          keptWords={result.keptWords}
+          protectedPhrases={result.protectedPhrases}
+        />
       </div>
-    )
+    </div>
   );
 }
 
 function OriginalTabContent() {
   const file = useStore((state) => state.file);
-
-  const originalChunks = useStore((state) => state.originalChunks);
-  const chunks = useMemo(
-    () => originalChunks?.map((chunk) => chunk.text),
-    [originalChunks]
-  );
-
-  const wordFreq = useStore((state) => state.outputOptions.level.wordFreq);
-
-  const [analysedText, setAnalysedText] =
-    useState<Awaited<ReturnType<typeof analyze>>>();
-
-  useEffect(() => {
-    if (chunks) {
-      analyze(chunks, wordFreq).then((result) => {
-        setAnalysedText(result);
-      });
-    }
-  }, []);
+  const result = useStore((state) => state.simplifiedResult);
+  const fileUrl = useMemo(() => (file ? URL.createObjectURL(file) : ''), [file]);
+  if (!result) return null;
 
   return (
-    file && (
-      <div className='flex items-center justify-center flex-col'>
-        <div className='flex w-full items-center justify-center py-2 px-4'>
-          Vocabulary Coverage:{' '}
-          <span className='font-bold'>
-            {analysedText && (1 - Number(analysedText.newWordsRate)) * 100}%
-          </span>
-        </div>
-        <div className='flex  flex-col text-md mb-4 flex-1 w-full gap-4'>
-          <AudioPlayer
-            src={URL.createObjectURL(file)}
-            title={file.name}
-            type={file.type}
-          />
-
-          {analysedText && <AnalyzedText chunks={analysedText.analyzedChunks} />}
-        </div>
+    <div className='flex items-center justify-center flex-col'>
+      {result.originalCoverage !== undefined && (
+        <CoverageLine coverage={result.originalCoverage} />
+      )}
+      <div className='flex  flex-col text-md mb-4 flex-1 w-full gap-4'>
+        {file && <AudioPlayer src={fileUrl} title={file.name} type={file.type} />}
+        <HighlightedText text={result.original} spans={result.originalSpans} />
+        <HighlightLegend spans={result.originalSpans} />
       </div>
-    )
+    </div>
   );
 }

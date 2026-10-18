@@ -39,7 +39,6 @@ export const createConfigSlice: StateCreator<
       state.contextWindowSize = size;
     });
   },
-  originalChunks: [],
   simplifiedResult: null,
   studyTalkId: null,
   studyLevel: null,
@@ -148,27 +147,9 @@ export const createConfigSlice: StateCreator<
       state.fileUrl = url;
     });
   },
-  setSimplifiedResult: ({
-    url,
-    downloadUrl,
-    simplifiedText,
-    totalLemmasCount,
-    totalNewWordsCount,
-    newWordsRate,
-    keyTerms,
-    keptWords,
-  }) => {
+  setSimplifiedResult: (view) => {
     set((state) => {
-      state.simplifiedResult = {
-        audioFileUrl: url,
-        audioDownloadUrl: downloadUrl,
-        simplifiedText,
-        totalLemmasCount,
-        totalNewWordsCount,
-        newWordsRate,
-        keyTerms: keyTerms ?? [],
-        keptWords: keptWords ?? [],
-      };
+      state.simplifiedResult = view;
     });
   },
   resetAll: () => {
@@ -196,11 +177,6 @@ export const createConfigSlice: StateCreator<
       } else if (message === 'Generating audio...') {
         state.simplificationProgress.number = 95;
       }
-    });
-  },
-  setOriginalChunks: (chunks) => {
-    set((state) => {
-      state.originalChunks = chunks;
     });
   },
   setOutputOptions: (opts) => {

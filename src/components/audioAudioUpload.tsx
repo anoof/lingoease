@@ -55,7 +55,6 @@ export default function AudioVideoUpload({
   const [simplifying, startSimplifyTransition] = useTransition();
   const setSimplifiedResult = useStore((state) => state.setSimplifiedResult);
 
-  const setOriginalChunks = useStore((state) => state.setOriginalChunks);
   const contextWindowSize = useStore((state) => state.contextWindowSize);
 
   // const kokoroModel = useKokoroModel();
@@ -116,7 +115,6 @@ export default function AudioVideoUpload({
         // console.log(analysisRes);
 
         // setOriginalChunks(analysisRes.analyzedChunks);
-        setOriginalChunks(chunks.map((text) => ({ text, newWords: [] })));
 
         setSimplificationProgress('Simplifying the scripts...');
         const simplifyResp = await simplify(
@@ -143,24 +141,13 @@ export default function AudioVideoUpload({
 
         const view = buildResultView({
           source: 'live',
-          simplifiedText: simplifyResp.simplified,
-          wordFreq,
-          keyTerms: simplifyResp.key_terms,
-          keptWords: simplifyResp.kept_words,
+          data: simplifyResp,
+          original: chunks.join(' '),
           audio: { url, downloadUrl },
         });
 
         setIsOpen(false);
-        setSimplifiedResult({
-          url,
-          downloadUrl,
-          simplifiedText: view.simplifiedChunks,
-          totalLemmasCount: view.totalLemmasCount,
-          totalNewWordsCount: view.totalNewWordsCount,
-          newWordsRate: view.newWordsRate,
-          keyTerms: view.keyTerms,
-          keptWords: view.keptWords,
-        });
+        setSimplifiedResult(view);
         updateCurrentStep();
 
       } catch (error) {

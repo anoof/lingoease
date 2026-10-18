@@ -1,32 +1,772 @@
 {
  "talk_id": "HYepzb4-FWI",
  "original": "So for many years I've been doing computer art, geometric art with pen and paper on plotters. I write the code and sometimes I build the machines. I would upload the stuff to social media, figuring maybe people like the soft noises and the clicks and pops and so on. No one really paid any attention to it. At some point, someone gave me a chocolate 3D printer extruder, and I filled it with acrylic paint, and set it up and made a terrible mess. I wanted to try out making some dots, and I wrote a little program, and the dots weren't in order. These were reactions it got. Some people got angry. Some people sympathized with the robot. Some people danced to it. Mostly angry. Narrator: If you go in a line, it’ll be faster. If you go in a line, it'll be -- it'll be quicker if you go in a line. I think -- you're going side to side. You should go in a line and you'll go faster. Just go -- go in a line! Joshua Schachter: This one is “Bad day at the circle factory.” I realized you could manufacture emotions of various kinds with just a robot and pen and paper. So I leaned into it. People got very upset. And I got yelled at a lot. Very gently. A lot about \"I hope your pillow is warm.\" These started getting millions and millions of views. And a lot of reactions as well. Narrator: Circle, circle, circle, I love you. Circle, circle. Did I confess too soon? I confessed too soon! Never mind, never mind! JS: People asked me to do mazes. OK. How do you screw up a maze? This is how. It went right past the exit. I had to learn the rules of this little medium. It had to be 12, maybe 15 seconds. Go quickly. And I had to try to hide the mistake underneath the mechanism. And mostly the ending had to be traumatic. I promised people -- I would promise people oddly satisfying, and then I would betray them. People thought this was about AI. That one went super viral. People spent 200,000 hours watching my 17 second video. I got so many notifications my phone died repeatedly for days. So ultimately, constraints are great for making art, but you ultimately end up becoming a crappy cover artist of your own work. And I didn't really like that, so I took a break. But remember that if you go on the internet and see something that annoys you just a bit ... it might have been me. Thank you.",
- "simplified": "For many years, I have made computer art. I make geometric art using a piece and paper on plans. I write the line for the art, and sometimes I build the machines. I would share my work on social media. I thought maybe people would like the soft noises and the presses and pops. But no one really noticed it. One day, someone gave me a chocolate 3D printer machine. I filled it with acrylic paint. I set it up and made a big mess. I wanted to try making some points, so I wrote a small program. The points did not come out in order. Some people replied to this. Some were angry. Some people felt sorry for the machine. Some people danced to it. Most people were angry. The narrator said, \"If you stand in a line, it will be faster. If you stand in a line, it will be quicker. I think you are moving side to side. You should stand in a line, and you will go faster. Just stand in a line!\" Joshua Schachter: This story is called “Bad day at the round shop.” I found out that you can make feelings using just a machine and some paper. So, I decided to try this idea. People became very angry. I got shouted at many times. It was gentle shouting. Many people said things like \"I hope your bed is warm.\" These stories started to get millions and millions of views. And many people had replies too. Narrator: Circle, circle, circle, I love you. Round, round. Did I say my feelings too early? I said my feelings too early! It’s okay, it’s okay! JS: People wanted me to make mazes. OK. How do you mess up a maze? This is how. I went right past the door. I had to learn the rules of this small game. It had to take 12 or maybe 15 seconds. I needed to go quickly. I also had to try to hide the mistake under the cause. The ending had to be very sad. I promised people that it would be oddly satisfying, but then I would let them down. Many people thought this was about AI. That video became very hot. People watched my 17-second video for a total of 200,000 hours. I got so many notices that my phone died many times over several days. In the end, having rules can help make art, but you can also end up making a poor version of your own work. I did not like that, so I decided to take a break. But remember, if you go on the web and see something that bothers you a little, it might have been me. Thank you.",
- "coverage": 0.958,
+ "simplified": "For many years, I have made computer art. I create geometric art using pen and paper on plotters. I write the code for the art, and sometimes I build the machines. I would share my work on social media. I thought maybe people would like the soft noises and the clicks and pops. But no one really noticed it. One day, someone gave me a chocolate 3D printer extruder. I filled it with acrylic paint. I set it up and made a big mess. I wanted to try making some dots, so I wrote a small program. The dots did not come out in order. Some people reacted to this. Some were angry. Some people felt sorry for the machine. Some people danced to it. Most people were angry. The narrator said, \"If you stand in a line, it will be faster. If you stand in a line, it will be quicker. I think you are moving side to side. You should stand in a line, and you will go faster. Just stand in a line!\" Joshua Schachter: This story is called “Bad day at the circle factory.” I found out that you can create feelings using just a machine and some paper. So, I decided to try this idea. People became very upset. I got yelled at many times. It was gentle yelling. Many people said things like \"I hope your pillow is warm.\" These stories started to get millions and millions of views. And many people had responses too. Narrator: Circle, circle, circle, I love you. Circle, circle. Did I say my feelings too early? I said my feelings too early! It’s okay, it’s okay! JS: People wanted me to make mazes. OK. How do you mess up a maze? This is how. I went right past the exit. I had to learn the rules of this small game. It had to take 12 or maybe 15 seconds. I needed to go quickly. I also had to try to hide the wrong under the mechanism. The ending had to be very sad. I promised people that it would be oddly satisfying, but then I would let them down. Many people thought this was about AI. That video became very popular. People watched my 17-second movie for a total of 200,000 hours. I received so many notices that my phone died many times over several days. In the end, having limits can help create art, but you can also end up making a poor copy of your own work. I did not like that, so I decided to take a break. But remember, if you go on the internet and see something that annoys you a little, it might have been me. Thank you.",
+ "coverage": 0.8914,
  "level": "1k",
- "coverage_key_terms_known": 0.958,
+ "coverage_key_terms_known": 0.8914,
  "key_terms": [],
  "kept_words": [
-  "narrator"
+  "angry",
+  "annoys",
+  "circle",
+  "code",
+  "copy",
+  "dots",
+  "extruder",
+  "factory",
+  "gentle",
+  "internet",
+  "maze",
+  "mechanism",
+  "mess",
+  "narrator",
+  "noises",
+  "oddly",
+  "pillow",
+  "plotters",
+  "popular",
+  "reacted",
+  "sad",
+  "satisfying",
+  "soft",
+  "upset",
+  "video",
+  "yelled",
+  "yelling"
  ],
  "protected_phrases": [
   "acrylic paint",
   "chocolate 3D printer",
-  "computer art",
   "geometric art",
-  "oddly satisfying",
+  "pen and paper",
   "social media"
  ],
  "stats": {
-  "accepted": 23,
-  "vetoed": 2,
+  "accepted": 7,
+  "vetoed": 1,
   "key_term_tokens": 0,
-  "kept_word_tokens": 2,
+  "kept_word_tokens": 3,
   "original_words": 441,
-  "simplified_words": 455
+  "simplified_words": 454,
+  "passes": 1,
+  "subs_checked": 35,
+  "subs_rejected": 26,
+  "check_kept_types": 25,
+  "span_mwe": 5,
+  "span_proper_noun": 8,
+  "span_key_term": 0,
+  "span_kept_word": 33,
+  "span_oov": 2
  },
- "engine_version": "v6-2026-10-09",
- "config_id": "858d10334b60",
- "run": "v6_floor_targets",
- "cached": true
+ "engine_version": "v8b-2026-10-18",
+ "config_id": "8bb3edf3da77",
+ "run": "v8b_floor_targets",
+ "cached": true,
+ "spans": [
+  {
+   "start": 51,
+   "end": 64,
+   "text": "geometric art",
+   "type": "mwe"
+  },
+  {
+   "start": 71,
+   "end": 84,
+   "text": "pen and paper",
+   "type": "mwe"
+  },
+  {
+   "start": 88,
+   "end": 96,
+   "text": "plotters",
+   "type": "kept_word"
+  },
+  {
+   "start": 110,
+   "end": 114,
+   "text": "code",
+   "type": "kept_word"
+  },
+  {
+   "start": 189,
+   "end": 201,
+   "text": "social media",
+   "type": "mwe"
+  },
+  {
+   "start": 241,
+   "end": 245,
+   "text": "soft",
+   "type": "kept_word"
+  },
+  {
+   "start": 246,
+   "end": 252,
+   "text": "noises",
+   "type": "kept_word"
+  },
+  {
+   "start": 261,
+   "end": 267,
+   "text": "clicks",
+   "type": "oov"
+  },
+  {
+   "start": 272,
+   "end": 276,
+   "text": "pops",
+   "type": "oov"
+  },
+  {
+   "start": 335,
+   "end": 355,
+   "text": "chocolate 3D printer",
+   "type": "mwe"
+  },
+  {
+   "start": 356,
+   "end": 364,
+   "text": "extruder",
+   "type": "kept_word"
+  },
+  {
+   "start": 383,
+   "end": 396,
+   "text": "acrylic paint",
+   "type": "mwe"
+  },
+  {
+   "start": 425,
+   "end": 429,
+   "text": "mess",
+   "type": "kept_word"
+  },
+  {
+   "start": 459,
+   "end": 463,
+   "text": "dots",
+   "type": "kept_word"
+  },
+  {
+   "start": 497,
+   "end": 501,
+   "text": "dots",
+   "type": "kept_word"
+  },
+  {
+   "start": 541,
+   "end": 548,
+   "text": "reacted",
+   "type": "kept_word"
+  },
+  {
+   "start": 568,
+   "end": 573,
+   "text": "angry",
+   "type": "kept_word"
+  },
+  {
+   "start": 658,
+   "end": 663,
+   "text": "angry",
+   "type": "kept_word"
+  },
+  {
+   "start": 669,
+   "end": 677,
+   "text": "narrator",
+   "type": "kept_word"
+  },
+  {
+   "start": 884,
+   "end": 890,
+   "text": "Joshua",
+   "type": "proper_noun"
+  },
+  {
+   "start": 891,
+   "end": 900,
+   "text": "Schachter",
+   "type": "proper_noun"
+  },
+  {
+   "start": 939,
+   "end": 945,
+   "text": "circle",
+   "type": "kept_word"
+  },
+  {
+   "start": 946,
+   "end": 953,
+   "text": "factory",
+   "type": "kept_word"
+  },
+  {
+   "start": 1085,
+   "end": 1090,
+   "text": "upset",
+   "type": "kept_word"
+  },
+  {
+   "start": 1098,
+   "end": 1104,
+   "text": "yelled",
+   "type": "kept_word"
+  },
+  {
+   "start": 1127,
+   "end": 1133,
+   "text": "gentle",
+   "type": "kept_word"
+  },
+  {
+   "start": 1134,
+   "end": 1141,
+   "text": "yelling",
+   "type": "kept_word"
+  },
+  {
+   "start": 1185,
+   "end": 1191,
+   "text": "pillow",
+   "type": "kept_word"
+  },
+  {
+   "start": 1298,
+   "end": 1306,
+   "text": "Narrator",
+   "type": "kept_word"
+  },
+  {
+   "start": 1308,
+   "end": 1314,
+   "text": "Circle",
+   "type": "proper_noun"
+  },
+  {
+   "start": 1316,
+   "end": 1322,
+   "text": "circle",
+   "type": "proper_noun"
+  },
+  {
+   "start": 1324,
+   "end": 1330,
+   "text": "circle",
+   "type": "proper_noun"
+  },
+  {
+   "start": 1344,
+   "end": 1350,
+   "text": "Circle",
+   "type": "proper_noun"
+  },
+  {
+   "start": 1352,
+   "end": 1358,
+   "text": "circle",
+   "type": "kept_word"
+  },
+  {
+   "start": 1445,
+   "end": 1447,
+   "text": "JS",
+   "type": "proper_noun"
+  },
+  {
+   "start": 1474,
+   "end": 1479,
+   "text": "mazes",
+   "type": "kept_word"
+  },
+  {
+   "start": 1496,
+   "end": 1500,
+   "text": "mess",
+   "type": "kept_word"
+  },
+  {
+   "start": 1506,
+   "end": 1510,
+   "text": "maze",
+   "type": "kept_word"
+  },
+  {
+   "start": 1707,
+   "end": 1716,
+   "text": "mechanism",
+   "type": "kept_word"
+  },
+  {
+   "start": 1744,
+   "end": 1747,
+   "text": "sad",
+   "type": "kept_word"
+  },
+  {
+   "start": 1784,
+   "end": 1789,
+   "text": "oddly",
+   "type": "kept_word"
+  },
+  {
+   "start": 1790,
+   "end": 1800,
+   "text": "satisfying",
+   "type": "kept_word"
+  },
+  {
+   "start": 1869,
+   "end": 1871,
+   "text": "AI",
+   "type": "proper_noun"
+  },
+  {
+   "start": 1878,
+   "end": 1883,
+   "text": "video",
+   "type": "kept_word"
+  },
+  {
+   "start": 1896,
+   "end": 1903,
+   "text": "popular",
+   "type": "kept_word"
+  },
+  {
+   "start": 2130,
+   "end": 2134,
+   "text": "copy",
+   "type": "kept_word"
+  },
+  {
+   "start": 2235,
+   "end": 2243,
+   "text": "internet",
+   "type": "kept_word"
+  },
+  {
+   "start": 2267,
+   "end": 2273,
+   "text": "annoys",
+   "type": "kept_word"
+  }
+ ],
+ "original_spans": [
+  {
+   "start": 48,
+   "end": 61,
+   "text": "geometric art",
+   "type": "mwe"
+  },
+  {
+   "start": 67,
+   "end": 80,
+   "text": "pen and paper",
+   "type": "mwe"
+  },
+  {
+   "start": 84,
+   "end": 92,
+   "text": "plotters",
+   "type": "kept_word"
+  },
+  {
+   "start": 106,
+   "end": 110,
+   "text": "code",
+   "type": "kept_word"
+  },
+  {
+   "start": 155,
+   "end": 161,
+   "text": "upload",
+   "type": "oov"
+  },
+  {
+   "start": 175,
+   "end": 187,
+   "text": "social media",
+   "type": "mwe"
+  },
+  {
+   "start": 220,
+   "end": 224,
+   "text": "soft",
+   "type": "kept_word"
+  },
+  {
+   "start": 225,
+   "end": 231,
+   "text": "noises",
+   "type": "kept_word"
+  },
+  {
+   "start": 240,
+   "end": 246,
+   "text": "clicks",
+   "type": "oov"
+  },
+  {
+   "start": 251,
+   "end": 255,
+   "text": "pops",
+   "type": "oov"
+  },
+  {
+   "start": 340,
+   "end": 360,
+   "text": "chocolate 3D printer",
+   "type": "mwe"
+  },
+  {
+   "start": 361,
+   "end": 369,
+   "text": "extruder",
+   "type": "kept_word"
+  },
+  {
+   "start": 392,
+   "end": 405,
+   "text": "acrylic paint",
+   "type": "mwe"
+  },
+  {
+   "start": 441,
+   "end": 445,
+   "text": "mess",
+   "type": "kept_word"
+  },
+  {
+   "start": 479,
+   "end": 483,
+   "text": "dots",
+   "type": "kept_word"
+  },
+  {
+   "start": 523,
+   "end": 527,
+   "text": "dots",
+   "type": "kept_word"
+  },
+  {
+   "start": 557,
+   "end": 566,
+   "text": "reactions",
+   "type": "oov"
+  },
+  {
+   "start": 591,
+   "end": 596,
+   "text": "angry",
+   "type": "kept_word"
+  },
+  {
+   "start": 610,
+   "end": 621,
+   "text": "sympathized",
+   "type": "oov"
+  },
+  {
+   "start": 631,
+   "end": 636,
+   "text": "robot",
+   "type": "oov"
+  },
+  {
+   "start": 671,
+   "end": 676,
+   "text": "angry",
+   "type": "kept_word"
+  },
+  {
+   "start": 678,
+   "end": 686,
+   "text": "Narrator",
+   "type": "kept_word"
+  },
+  {
+   "start": 906,
+   "end": 912,
+   "text": "Joshua",
+   "type": "proper_noun"
+  },
+  {
+   "start": 913,
+   "end": 922,
+   "text": "Schachter",
+   "type": "proper_noun"
+  },
+  {
+   "start": 952,
+   "end": 958,
+   "text": "circle",
+   "type": "kept_word"
+  },
+  {
+   "start": 959,
+   "end": 966,
+   "text": "factory",
+   "type": "kept_word"
+  },
+  {
+   "start": 990,
+   "end": 1001,
+   "text": "manufacture",
+   "type": "oov"
+  },
+  {
+   "start": 1002,
+   "end": 1010,
+   "text": "emotions",
+   "type": "oov"
+  },
+  {
+   "start": 1040,
+   "end": 1045,
+   "text": "robot",
+   "type": "oov"
+  },
+  {
+   "start": 1050,
+   "end": 1063,
+   "text": "pen and paper",
+   "type": "mwe"
+  },
+  {
+   "start": 1070,
+   "end": 1076,
+   "text": "leaned",
+   "type": "oov"
+  },
+  {
+   "start": 1102,
+   "end": 1107,
+   "text": "upset",
+   "type": "kept_word"
+  },
+  {
+   "start": 1119,
+   "end": 1125,
+   "text": "yelled",
+   "type": "kept_word"
+  },
+  {
+   "start": 1141,
+   "end": 1147,
+   "text": "gently",
+   "type": "oov"
+  },
+  {
+   "start": 1174,
+   "end": 1180,
+   "text": "pillow",
+   "type": "kept_word"
+  },
+  {
+   "start": 1258,
+   "end": 1267,
+   "text": "reactions",
+   "type": "oov"
+  },
+  {
+   "start": 1277,
+   "end": 1285,
+   "text": "Narrator",
+   "type": "kept_word"
+  },
+  {
+   "start": 1287,
+   "end": 1293,
+   "text": "Circle",
+   "type": "proper_noun"
+  },
+  {
+   "start": 1295,
+   "end": 1301,
+   "text": "circle",
+   "type": "proper_noun"
+  },
+  {
+   "start": 1303,
+   "end": 1309,
+   "text": "circle",
+   "type": "proper_noun"
+  },
+  {
+   "start": 1323,
+   "end": 1329,
+   "text": "Circle",
+   "type": "proper_noun"
+  },
+  {
+   "start": 1331,
+   "end": 1337,
+   "text": "circle",
+   "type": "kept_word"
+  },
+  {
+   "start": 1345,
+   "end": 1352,
+   "text": "confess",
+   "type": "oov"
+  },
+  {
+   "start": 1365,
+   "end": 1374,
+   "text": "confessed",
+   "type": "oov"
+  },
+  {
+   "start": 1409,
+   "end": 1411,
+   "text": "JS",
+   "type": "proper_noun"
+  },
+  {
+   "start": 1435,
+   "end": 1440,
+   "text": "mazes",
+   "type": "kept_word"
+  },
+  {
+   "start": 1457,
+   "end": 1465,
+   "text": "screw up",
+   "type": "mwe"
+  },
+  {
+   "start": 1468,
+   "end": 1472,
+   "text": "maze",
+   "type": "kept_word"
+  },
+  {
+   "start": 1556,
+   "end": 1562,
+   "text": "medium",
+   "type": "oov"
+  },
+  {
+   "start": 1640,
+   "end": 1647,
+   "text": "mistake",
+   "type": "oov"
+  },
+  {
+   "start": 1648,
+   "end": 1658,
+   "text": "underneath",
+   "type": "oov"
+  },
+  {
+   "start": 1663,
+   "end": 1672,
+   "text": "mechanism",
+   "type": "kept_word"
+  },
+  {
+   "start": 1706,
+   "end": 1715,
+   "text": "traumatic",
+   "type": "oov"
+  },
+  {
+   "start": 1761,
+   "end": 1766,
+   "text": "oddly",
+   "type": "kept_word"
+  },
+  {
+   "start": 1767,
+   "end": 1777,
+   "text": "satisfying",
+   "type": "kept_word"
+  },
+  {
+   "start": 1796,
+   "end": 1802,
+   "text": "betray",
+   "type": "oov"
+  },
+  {
+   "start": 1839,
+   "end": 1841,
+   "text": "AI",
+   "type": "proper_noun"
+  },
+  {
+   "start": 1857,
+   "end": 1862,
+   "text": "super",
+   "type": "oov"
+  },
+  {
+   "start": 1863,
+   "end": 1868,
+   "text": "viral",
+   "type": "oov"
+  },
+  {
+   "start": 1919,
+   "end": 1924,
+   "text": "video",
+   "type": "kept_word"
+  },
+  {
+   "start": 1940,
+   "end": 1953,
+   "text": "notifications",
+   "type": "oov"
+  },
+  {
+   "start": 1968,
+   "end": 1978,
+   "text": "repeatedly",
+   "type": "oov"
+  },
+  {
+   "start": 1992,
+   "end": 2002,
+   "text": "ultimately",
+   "type": "oov"
+  },
+  {
+   "start": 2004,
+   "end": 2015,
+   "text": "constraints",
+   "type": "oov"
+  },
+  {
+   "start": 2050,
+   "end": 2060,
+   "text": "ultimately",
+   "type": "oov"
+  },
+  {
+   "start": 2079,
+   "end": 2085,
+   "text": "crappy",
+   "type": "oov"
+  },
+  {
+   "start": 2092,
+   "end": 2098,
+   "text": "artist",
+   "type": "oov"
+  },
+  {
+   "start": 2202,
+   "end": 2210,
+   "text": "internet",
+   "type": "kept_word"
+  },
+  {
+   "start": 2234,
+   "end": 2240,
+   "text": "annoys",
+   "type": "kept_word"
+  }
+ ]
 }

@@ -1,3 +1,4 @@
+import type { ResultView } from '@/lib/resultView';
 import type { ApiKey } from '@/typings';
 
 type SimplificationProgressMessage =
@@ -26,17 +27,9 @@ export type ConfigSlice = {
     number: number;
   };
 
-  originalChunks: { text: string; newWords: string[] }[];
-  simplifiedResult: {
-    audioFileUrl: string;
-    audioDownloadUrl: string;
-    simplifiedText: { text: string; newWords: string[] }[];
-    totalLemmasCount: number;
-    totalNewWordsCount: number;
-    newWordsRate: string;
-    keyTerms: KeyTerm[];
-    keptWords: string[];
-  } | null;
+  // A Live Result: the /simplify response as the result view renders it
+  // (text, backend highlight spans, coverage, word lists) plus the audio.
+  simplifiedResult: (ResultView & { source: 'live' }) | null;
 
   // Study Talk viewing — mirrored from the `?talk=&level=` URL params, independent
   // of currentStep. See CONTEXT.md: Study Talk / Study Result.
@@ -63,28 +56,9 @@ export type ConfigSlice = {
   setContent: (content: string) => void;
   setFile: (file: File | null) => void;
   setFileUrl: (url: string) => void;
-  setSimplifiedResult: ({
-    url,
-    downloadUrl,
-    simplifiedText,
-    keyTerms,
-    keptWords,
-  }: {
-    url: string;
-    downloadUrl: string;
-    simplifiedText: {
-      text: string;
-      newWords: string[];
-    }[];
-    totalLemmasCount: number;
-    totalNewWordsCount: number;
-    newWordsRate: string;
-    keyTerms?: KeyTerm[];
-    keptWords?: string[];
-  }) => void;
+  setSimplifiedResult: (view: ResultView & { source: 'live' }) => void;
   resetAll: () => void;
   setSimplificationProgress: (message: SimplificationProgressMessage) => void;
-  setOriginalChunks: (chunks: { text: string; newWords: string[] }[]) => void;
   setOutputOptions: (opts: Partial<OutputOptions>) => void;
   setContextWindowSize: (size: number) => void;
   selectedModel: string;

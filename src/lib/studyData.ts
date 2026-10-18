@@ -1,3 +1,4 @@
+import type { Span } from '@/lib/highlight';
 import type { KeyTerm } from '@/store/typing';
 
 export type StudyManifest = {
@@ -7,7 +8,8 @@ export type StudyManifest = {
   variants: Record<string, { config_id: string; levels: Record<string, string> }>;
   talks: {
     id: string;
-    number: number;
+    number: number; // display number in the study list (1..n, in study order)
+    corpus_number?: number; // the talk's number in the full 20-talk corpus
     title: string;
     source_url: string;
     preview: string;
@@ -23,6 +25,8 @@ export type StudyTalkFile = {
   key_terms?: KeyTerm[];
   kept_words?: string[];
   protected_phrases?: string[];
+  spans?: Span[]; // v7+: highlights for `simplified`
+  original_spans?: Span[]; // v7+: highlights for `original`
   coverage_key_terms_known?: number;
   stats?: Record<string, number>;
   engine_version: string;

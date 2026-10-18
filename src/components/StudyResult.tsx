@@ -1,11 +1,10 @@
 'use client';
 
-import { analyzeChunks } from '@/actions/llm/utils';
 import { buildResultView } from '@/lib/resultView';
 import { fetchStudyTalk, type StudyTalkFile } from '@/lib/studyData';
 import { useStore } from '@/store';
 import { useEffect, useMemo, useState } from 'react';
-import { AnalyzedText, KeyTermsSection } from './resultParts';
+import { HighlightedText, HighlightLegend, KeyTermsSection } from './resultParts';
 import { Button } from './ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 
@@ -59,26 +58,22 @@ export default function StudyResult() {
 }
 
 function ResultTabs({ talk }: { talk: StudyTalkFile }) {
-  const wordFreq = levelToWordFreq(talk.level);
-
-  // analyzeChunks runs a full NLP pass — compute it once per talk, not on
-  // every render (a mounted ResultTabs re-renders for reasons unrelated to
-  // the talk itself, e.g. sidebar state).
+  // Highlights come precomputed in the talk file (pipeline spans) — nothing
+  // is analysed here.
   const view = useMemo(
-    () =>
-      buildResultView({
-        source: 'study',
-        simplifiedText: talk.simplified,
-        wordFreq,
-        keyTerms: talk.key_terms,
-        keptWords: talk.kept_words,
-      }),
-    [talk, wordFreq]
+    () => buildResultView({ source: 'study', data: talk }),
+    [talk]
   );
 
-  const originalAnalyzed = useMemo(
-    () => analyzeChunks([talk.original], wordFreq),
-    [talk, wordFreq]
+  const sections = (
+    <>
+      <HighlightLegend spans={[...view.spans, ...view.originalSpans]} />
+      <KeyTermsSection
+        keyTerms={view.keyTerms}
+        keptWords={view.keptWords}
+        protectedPhrases={view.protectedPhrases}
+      />
+    </>
   );
 
   const layout = useStore((state) => state.studyLayout);
@@ -115,16 +110,21 @@ function ResultTabs({ talk }: { talk: StudyTalkFile }) {
           style={{ gridTemplateColumns: 'repeat(2, minmax(0, 1fr))' }}
         >
           <div style={COLUMN_BOX}>
-            <AnalyzedText chunks={view.simplifiedChunks} height={TEXT_HEIGHT} />
+            <HighlightedText
+              text={view.simplified}
+              spans={view.spans}
+              height={TEXT_HEIGHT}
+            />
           </div>
           <div style={COLUMN_BOX}>
-            <AnalyzedText
-              chunks={originalAnalyzed.analyzedChunks}
+            <HighlightedText
+              text={view.original}
+              spans={view.originalSpans}
               height={TEXT_HEIGHT}
             />
           </div>
         </div>
-        <KeyTermsSection keyTerms={view.keyTerms} keptWords={view.keptWords} />
+        {sections}
       </div>
     );
   }
@@ -145,8 +145,12 @@ function ResultTabs({ talk }: { talk: StudyTalkFile }) {
       >
         <div className='flex items-center justify-center flex-col'>
           <div className='flex flex-col text-md mb-4 flex-1 w-full gap-4'>
-            <AnalyzedText chunks={view.simplifiedChunks} height={TEXT_HEIGHT} />
-            <KeyTermsSection keyTerms={view.keyTerms} keptWords={view.keptWords} />
+            <HighlightedText
+              text={view.simplified}
+              spans={view.spans}
+              height={TEXT_HEIGHT}
+            />
+            {sections}
           </div>
         </div>
       </TabsContent>
@@ -157,10 +161,12 @@ function ResultTabs({ talk }: { talk: StudyTalkFile }) {
       >
         <div className='flex items-center justify-center flex-col'>
           <div className='flex flex-col text-md mb-4 flex-1 w-full gap-4'>
-            <AnalyzedText
-              chunks={originalAnalyzed.analyzedChunks}
+            <HighlightedText
+              text={view.original}
+              spans={view.originalSpans}
               height={TEXT_HEIGHT}
             />
+            <HighlightLegend spans={view.originalSpans} />
           </div>
         </div>
       </TabsContent>
@@ -179,9 +185,3 @@ const COLUMN_BOX = {
   borderRadius: '0.5rem',
   minWidth: 0,
 } as const;
-
-function levelToWordFreq(level: string): 1000 | 2000 | 3000 {
-  if (level === '2k') return 2000;
-  if (level === '3k') return 3000;
-  return 1000;
-}
