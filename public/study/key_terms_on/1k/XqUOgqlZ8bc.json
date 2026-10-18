@@ -802,37 +802,37 @@
    "start": 8,
    "end": 13,
    "text": "Roger",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 14,
    "end": 21,
    "text": "Penrose",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 50,
    "end": 60,
    "text": "scientists",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 93,
    "end": 98,
    "text": "Nobel",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 99,
    "end": 104,
    "text": "Prize",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 108,
    "end": 115,
    "text": "Physics",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 129,
@@ -844,73 +844,73 @@
    "start": 147,
    "end": 152,
    "text": "holes",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 158,
    "end": 166,
    "text": "Einstein",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
-   "start": 169,
+   "start": 187,
    "end": 197,
-   "text": "general theory of relativity",
-   "type": "mwe"
+   "text": "relativity",
+   "type": "oov"
   },
   {
    "start": 222,
    "end": 227,
    "text": "Roger",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 228,
    "end": 235,
    "text": "Penrose",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 243,
    "end": 255,
    "text": "contribution",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 272,
    "end": 283,
    "text": "mathematics",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 301,
    "end": 312,
    "text": "mathematics",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 322,
    "end": 328,
    "text": "tiling",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 340,
    "end": 346,
    "text": "tiling",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 371,
    "end": 376,
    "text": "tiles",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 417,
    "end": 424,
    "text": "pattern",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 445,
@@ -922,25 +922,25 @@
    "start": 466,
    "end": 473,
    "text": "pattern",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 479,
    "end": 484,
    "text": "Roger",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 485,
    "end": 492,
    "text": "Penrose",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 529,
    "end": 535,
    "text": "shapes",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 540,
@@ -952,7 +952,7 @@
    "start": 554,
    "end": 561,
    "text": "pattern",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 576,
@@ -964,7 +964,7 @@
    "start": 585,
    "end": 595,
    "text": "infinitely",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 603,
@@ -976,25 +976,25 @@
    "start": 626,
    "end": 635,
    "text": "repeating",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 658,
    "end": 660,
    "text": "pi",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 667,
    "end": 674,
    "text": "decimal",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 686,
    "end": 692,
    "text": "random",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 712,
@@ -1006,19 +1006,19 @@
    "start": 728,
    "end": 737,
    "text": "repeating",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 742,
    "end": 753,
    "text": "mathematics",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 783,
    "end": 795,
    "text": "aperiodicity",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 804,
@@ -1030,19 +1030,19 @@
    "start": 817,
    "end": 826,
    "text": "aperiodic",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 827,
    "end": 831,
    "text": "tile",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 851,
    "end": 856,
    "text": "tiles",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 868,
@@ -1052,51 +1052,63 @@
   },
   {
    "start": 901,
+   "end": 908,
+   "text": "Penrose",
+   "type": "oov"
+  },
+  {
+   "start": 909,
    "end": 915,
-   "text": "Penrose tiling",
-   "type": "mwe"
+   "text": "tiling",
+   "type": "oov"
   },
   {
    "start": 924,
    "end": 929,
    "text": "Roger",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 930,
    "end": 937,
    "text": "Penrose",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 947,
    "end": 952,
    "text": "Roger",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 953,
    "end": 960,
    "text": "Penrose",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 985,
+   "end": 992,
+   "text": "Penrose",
+   "type": "oov"
+  },
+  {
+   "start": 993,
    "end": 998,
-   "text": "Penrose tiles",
-   "type": "mwe"
+   "text": "tiles",
+   "type": "oov"
   },
   {
    "start": 1024,
    "end": 1029,
    "text": "Peter",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1030,
    "end": 1032,
    "text": "Lu",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1049,
@@ -1108,19 +1120,19 @@
    "start": 1069,
    "end": 1076,
    "text": "physics",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1080,
    "end": 1089,
    "text": "Princeton",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1100,
    "end": 1108,
    "text": "vacation",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1118,
@@ -1132,7 +1144,7 @@
    "start": 1128,
    "end": 1138,
    "text": "Uzbekistan",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1140,
@@ -1144,13 +1156,13 @@
    "start": 1156,
    "end": 1163,
    "text": "pattern",
-   "type": "key_term"
+   "type": "oov"
   },
   {
-   "start": 1169,
+   "start": 1182,
    "end": 1190,
-   "text": "14th century madrassa",
-   "type": "mwe"
+   "text": "madrassa",
+   "type": "oov"
   },
   {
    "start": 1217,
@@ -1160,15 +1172,21 @@
   },
   {
    "start": 1251,
+   "end": 1258,
+   "text": "Penrose",
+   "type": "oov"
+  },
+  {
+   "start": 1259,
    "end": 1265,
-   "text": "Penrose tiling",
-   "type": "mwe"
+   "text": "tiling",
+   "type": "oov"
   },
   {
    "start": 1283,
    "end": 1290,
    "text": "Penrose",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1318,
@@ -1192,13 +1210,13 @@
    "start": 1357,
    "end": 1366,
    "text": "headlines",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1390,
    "end": 1398,
    "text": "Discover",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1416,
@@ -1208,9 +1226,15 @@
   },
   {
    "start": 1456,
+   "end": 1466,
+   "text": "scientific",
+   "type": "oov"
+  },
+  {
+   "start": 1467,
    "end": 1476,
-   "text": "scientific discovery",
-   "type": "mwe"
+   "text": "discovery",
+   "type": "oov"
   },
   {
    "start": 1525,
@@ -1222,19 +1246,19 @@
    "start": 1533,
    "end": 1540,
    "text": "pattern",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 1567,
    "end": 1578,
    "text": "mathematics",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 1588,
    "end": 1595,
    "text": "physics",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1612,
@@ -1246,19 +1270,25 @@
    "start": 1683,
    "end": 1690,
    "text": "pattern",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 1701,
-   "end": 1716,
-   "text": "ancient culture",
-   "type": "mwe"
+   "end": 1708,
+   "text": "ancient",
+   "type": "oov"
   },
   {
-   "start": 1815,
+   "start": 1709,
+   "end": 1716,
+   "text": "culture",
+   "type": "oov"
+  },
+  {
+   "start": 1824,
    "end": 1836,
-   "text": "world of anthropology",
-   "type": "mwe"
+   "text": "anthropology",
+   "type": "oov"
   },
   {
    "start": 1872,
@@ -1270,37 +1300,37 @@
    "start": 1889,
    "end": 1896,
    "text": "culture",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 1945,
    "end": 1952,
    "text": "pattern",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 1989,
    "end": 2000,
    "text": "complicated",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2007,
    "end": 2018,
    "text": "complicated",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2041,
    "end": 2052,
    "text": "complicated",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2067,
    "end": 2076,
    "text": "aperiodic",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2161,
@@ -1318,7 +1348,7 @@
    "start": 2218,
    "end": 2225,
    "text": "predict",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2235,
@@ -1330,7 +1360,7 @@
    "start": 2248,
    "end": 2258,
    "text": "complexity",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2266,
@@ -1348,37 +1378,49 @@
    "start": 2305,
    "end": 2312,
    "text": "predict",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2331,
+   "end": 2341,
+   "text": "underlying",
+   "type": "oov"
+  },
+  {
+   "start": 2342,
    "end": 2347,
-   "text": "underlying unity",
-   "type": "mwe"
+   "text": "unity",
+   "type": "oov"
   },
   {
    "start": 2464,
    "end": 2469,
    "text": "Peter",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 2470,
    "end": 2472,
    "text": "Lu",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 2482,
    "end": 2492,
    "text": "Uzbekistan",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 2571,
+   "end": 2578,
+   "text": "Penrose",
+   "type": "oov"
+  },
+  {
+   "start": 2579,
    "end": 2584,
-   "text": "Penrose tiles",
-   "type": "mwe"
+   "text": "tiles",
+   "type": "oov"
   },
   {
    "start": 2596,
@@ -1390,73 +1432,79 @@
    "start": 2615,
    "end": 2621,
    "text": "shapes",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 2650,
    "end": 2656,
    "text": "shapes",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 2662,
+   "end": 2670,
+   "text": "medieval",
+   "type": "oov"
+  },
+  {
+   "start": 2671,
    "end": 2680,
-   "text": "medieval craftsmen",
-   "type": "mwe"
+   "text": "craftsmen",
+   "type": "oov"
   },
   {
    "start": 2730,
-   "end": 2748,
-   "text": "construction lines",
-   "type": "mwe"
+   "end": 2742,
+   "text": "construction",
+   "type": "oov"
   },
   {
    "start": 2774,
-   "end": 2792,
-   "text": "construction lines",
-   "type": "mwe"
+   "end": 2786,
+   "text": "construction",
+   "type": "oov"
   },
   {
    "start": 2878,
    "end": 2883,
    "text": "weave",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2941,
    "end": 2946,
    "text": "tiles",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 2968,
-   "end": 2986,
-   "text": "construction lines",
-   "type": "mwe"
+   "end": 2980,
+   "text": "construction",
+   "type": "oov"
   },
   {
    "start": 3020,
-   "end": 3040,
-   "text": "underlying structure",
-   "type": "mwe"
+   "end": 3030,
+   "text": "underlying",
+   "type": "oov"
   },
   {
    "start": 3045,
    "end": 3050,
    "text": "unity",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 3077,
    "end": 3084,
    "text": "complex",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 3089,
    "end": 3098,
    "text": "aperiodic",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 3105,
@@ -1465,10 +1513,16 @@
    "type": "oov"
   },
   {
-   "start": 3117,
+   "start": 3124,
+   "end": 3134,
+   "text": "underlying",
+   "type": "oov"
+  },
+  {
+   "start": 3135,
    "end": 3140,
-   "text": "hidden underlying unity",
-   "type": "mwe"
+   "text": "unity",
+   "type": "oov"
   },
   {
    "start": 3152,
@@ -1478,51 +1532,51 @@
   },
   {
    "start": 3167,
-   "end": 3180,
-   "text": "ancient world",
-   "type": "mwe"
+   "end": 3174,
+   "text": "ancient",
+   "type": "oov"
   },
   {
    "start": 3201,
    "end": 3206,
    "text": "Egypt",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 3211,
    "end": 3217,
    "text": "Greece",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 3222,
    "end": 3231,
    "text": "Australia",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 3236,
    "end": 3247,
    "text": "Mesoamerica",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 3258,
    "end": 3265,
    "text": "America",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 3270,
    "end": 3276,
    "text": "Europe",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 3295,
    "end": 3299,
    "text": "East",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 3312,
@@ -1534,13 +1588,19 @@
    "start": 3319,
    "end": 3323,
    "text": "West",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 3344,
+   "end": 3354,
+   "text": "underlying",
+   "type": "oov"
+  },
+  {
+   "start": 3355,
    "end": 3360,
-   "text": "underlying unity",
-   "type": "mwe"
+   "text": "unity",
+   "type": "oov"
   },
   {
    "start": 3372,
@@ -1552,31 +1612,37 @@
    "start": 3461,
    "end": 3466,
    "text": "Plato",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 3496,
    "end": 3504,
    "text": "medieval",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 3513,
    "end": 3524,
    "text": "philosopher",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 3525,
    "end": 3532,
    "text": "Spinoza",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 3550,
+   "end": 3558,
+   "text": "singular",
+   "type": "oov"
+  },
+  {
+   "start": 3559,
    "end": 3568,
-   "text": "singular substance",
-   "type": "mwe"
+   "text": "substance",
+   "type": "oov"
   },
   {
    "start": 3615,
@@ -1588,31 +1654,43 @@
    "start": 3671,
    "end": 3682,
    "text": "philosopher",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 3683,
    "end": 3689,
    "text": "Alfred",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 3696,
    "end": 3705,
    "text": "Whitehead",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 3728,
+   "end": 3744,
+   "text": "undifferentiated",
+   "type": "oov"
+  },
+  {
+   "start": 3745,
+   "end": 3754,
+   "text": "aesthetic",
+   "type": "oov"
+  },
+  {
+   "start": 3755,
    "end": 3764,
-   "text": "undifferentiated aesthetic continuum",
-   "type": "mwe"
+   "text": "continuum",
+   "type": "oov"
   },
   {
    "start": 3836,
    "end": 3843,
    "text": "science",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 3876,
@@ -1624,25 +1702,25 @@
    "start": 3909,
    "end": 3918,
    "text": "physicist",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 3919,
    "end": 3924,
    "text": "David",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 3925,
    "end": 3929,
    "text": "Bohm",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 3952,
-   "end": 3967,
-   "text": "implicate order",
-   "type": "mwe"
+   "end": 3961,
+   "text": "implicate",
+   "type": "oov"
   },
   {
    "start": 3984,
@@ -1654,31 +1732,31 @@
    "start": 4065,
    "end": 4073,
    "text": "cultures",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 4176,
    "end": 4187,
    "text": "decorations",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 4220,
-   "end": 4238,
-   "text": "fundamental values",
-   "type": "mwe"
+   "end": 4231,
+   "text": "fundamental",
+   "type": "oov"
   },
   {
    "start": 4244,
    "end": 4251,
    "text": "culture",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 4370,
    "end": 4382,
    "text": "architecture",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 4432,
@@ -1690,7 +1768,7 @@
    "start": 4473,
    "end": 4484,
    "text": "decorations",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 4517,

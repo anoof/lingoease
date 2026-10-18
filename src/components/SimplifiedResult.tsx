@@ -3,9 +3,9 @@ import { useStore } from '@/store';
 import { useMemo } from 'react';
 import {
   CoverageLine,
-  HighlightLegend,
   HighlightedText,
-  KeyTermsSection,
+  OriginalNote,
+  WordListsSection,
 } from './resultParts';
 import AudioPlayer from './ui/audioPlayer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
@@ -62,12 +62,12 @@ function SimplifiedTabContent() {
             downloadUrl={result.audio.downloadUrl}
           />
         )}
-        <HighlightedText text={result.simplified} spans={result.spans} />
-        <HighlightLegend spans={result.spans} />
-        <KeyTermsSection
+        <HighlightedText text={result.simplified} spans={result.spans} style={LIVE_TEXT} />
+        <WordListsSection
           keyTerms={result.keyTerms}
           keptWords={result.keptWords}
           protectedPhrases={result.protectedPhrases}
+          spans={result.spans}
         />
       </div>
     </div>
@@ -87,9 +87,13 @@ function OriginalTabContent() {
       )}
       <div className='flex  flex-col text-md mb-4 flex-1 w-full gap-4'>
         {file && <AudioPlayer src={fileUrl} title={file.name} type={file.type} />}
-        <HighlightedText text={result.original} spans={result.originalSpans} />
-        <HighlightLegend spans={result.originalSpans} />
+        <HighlightedText text={result.original} spans={result.originalSpans} uniform style={LIVE_TEXT} />
+        <OriginalNote spans={result.originalSpans} />
       </div>
     </div>
   );
 }
+
+// Same height as before the v8b layout change (the live view keeps its
+// header, coverage line and audio player above the text).
+const LIVE_TEXT = { height: 'calc(100dvh - 30rem)' } as const;

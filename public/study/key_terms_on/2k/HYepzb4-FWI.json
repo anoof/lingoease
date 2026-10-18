@@ -222,21 +222,21 @@
  "original_spans": [
   {
    "start": 48,
-   "end": 61,
-   "text": "geometric art",
-   "type": "mwe"
+   "end": 57,
+   "text": "geometric",
+   "type": "oov"
   },
   {
    "start": 84,
    "end": 92,
    "text": "plotters",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 106,
    "end": 110,
    "text": "code",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 155,
@@ -245,10 +245,10 @@
    "type": "oov"
   },
   {
-   "start": 175,
+   "start": 182,
    "end": 187,
-   "text": "social media",
-   "type": "mwe"
+   "text": "media",
+   "type": "oov"
   },
   {
    "start": 220,
@@ -278,31 +278,31 @@
    "start": 361,
    "end": 369,
    "text": "extruder",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 392,
-   "end": 405,
-   "text": "acrylic paint",
-   "type": "mwe"
+   "end": 399,
+   "text": "acrylic",
+   "type": "oov"
   },
   {
    "start": 441,
    "end": 445,
    "text": "mess",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 479,
    "end": 483,
    "text": "dots",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 523,
    "end": 527,
    "text": "dots",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 591,
@@ -332,25 +332,25 @@
    "start": 678,
    "end": 686,
    "text": "Narrator",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 906,
    "end": 912,
    "text": "Joshua",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 913,
    "end": 922,
    "text": "Schachter",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 959,
    "end": 966,
    "text": "factory",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 990,
@@ -374,13 +374,13 @@
    "start": 1174,
    "end": 1180,
    "text": "pillow",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1277,
    "end": 1285,
    "text": "Narrator",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1345,
@@ -398,19 +398,19 @@
    "start": 1409,
    "end": 1411,
    "text": "JS",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1435,
    "end": 1440,
    "text": "mazes",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1468,
    "end": 1472,
    "text": "maze",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1556,
@@ -434,7 +434,7 @@
    "start": 1663,
    "end": 1672,
    "text": "mechanism",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1706,
@@ -446,7 +446,7 @@
    "start": 1761,
    "end": 1766,
    "text": "oddly",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1796,
@@ -458,7 +458,7 @@
    "start": 1839,
    "end": 1841,
    "text": "AI",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1863,
@@ -470,7 +470,7 @@
    "start": 1919,
    "end": 1924,
    "text": "video",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1940,
@@ -512,7 +512,7 @@
    "start": 2202,
    "end": 2210,
    "text": "internet",
-   "type": "kept_word"
+   "type": "oov"
   }
  ]
 }

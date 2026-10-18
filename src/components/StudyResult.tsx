@@ -3,13 +3,16 @@
 import { buildResultView } from '@/lib/resultView';
 import { fetchStudyTalk, type StudyTalkFile } from '@/lib/studyData';
 import { useStore } from '@/store';
-import { useEffect, useMemo, useState } from 'react';
-import { HighlightedText, HighlightLegend, KeyTermsSection } from './resultParts';
-import { Button } from './ui/button';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
+import { useEffect, useMemo, useState, type CSSProperties } from 'react';
+import { HighlightedText, OriginalNote, WordListsSection } from './resultParts';
+import { Tabs, TabsList, TabsTrigger } from './ui/tabs';
 
 // Renders a Study Result — a precomputed Study Talk opened from the sidebar.
 // Never calls the live backend. See CONTEXT.md.
+//
+// Layout: fills the space under the header; only the text box scrolls (the
+// page itself never does). Inline styles so the sizing doesn't depend on
+// Tailwind having scanned new classes.
 export default function StudyResult() {
   const talkId = useStore((state) => state.studyTalkId);
   const level = useStore((state) => state.studyLevel);
@@ -51,11 +54,13 @@ export default function StudyResult() {
   }
 
   return (
-    <div className='flex flex-col items-center justify-center w-full px-8 overscroll-none'>
+    <div style={FILL_COLUMN_PADDED}>
       <ResultTabs talk={talk} />
     </div>
   );
 }
+
+type Tab = 'simplified' | 'original';
 
 function ResultTabs({ talk }: { talk: StudyTalkFile }) {
   // Highlights come precomputed in the talk file (pipeline spans) — nothing
@@ -64,124 +69,61 @@ function ResultTabs({ talk }: { talk: StudyTalkFile }) {
     () => buildResultView({ source: 'study', data: talk }),
     [talk]
   );
+  const [tab, setTab] = useState<Tab>('simplified');
 
-  const sections = (
-    <>
-      <HighlightLegend spans={[...view.spans, ...view.originalSpans]} />
-      <KeyTermsSection
-        keyTerms={view.keyTerms}
-        keptWords={view.keptWords}
-        protectedPhrases={view.protectedPhrases}
-      />
-    </>
-  );
-
-  const layout = useStore((state) => state.studyLayout);
-  const setLayout = useStore((state) => state.setStudyLayout);
-
-  const toggle = (
-    <Button
-      variant='outline'
-      size='sm'
-      className='shrink-0'
-      onClick={() => setLayout(layout === 'sideBySide' ? 'tabs' : 'sideBySide')}
-    >
-      {layout === 'sideBySide' ? 'Tabs' : 'Side by side'}
-    </Button>
-  );
-
-  if (layout === 'sideBySide') {
-    return (
-      <div className='w-full h-full'>
-        <div style={{ position: 'relative', paddingBottom: '0.5rem' }}>
-          <div
-            className='grid gap-4 text-center text-sm font-semibold'
-            style={{ gridTemplateColumns: 'repeat(2, minmax(0, 1fr))' }}
-          >
-            <div style={COLUMN_LABEL}>Simplified</div>
-            <div style={COLUMN_LABEL}>Original</div>
-          </div>
-          <div style={{ position: 'absolute', right: 0, top: '-0.25rem' }}>
-            {toggle}
-          </div>
-        </div>
-        <div
-          className='grid gap-4'
-          style={{ gridTemplateColumns: 'repeat(2, minmax(0, 1fr))' }}
-        >
-          <div style={COLUMN_BOX}>
-            <HighlightedText
-              text={view.simplified}
-              spans={view.spans}
-              height={TEXT_HEIGHT}
-            />
-          </div>
-          <div style={COLUMN_BOX}>
-            <HighlightedText
-              text={view.original}
-              spans={view.originalSpans}
-              height={TEXT_HEIGHT}
-            />
-          </div>
-        </div>
-        {sections}
-      </div>
-    );
-  }
-
+  // Both texts stay mounted (hidden when inactive) so each keeps its scroll
+  // position when switching tabs.
   return (
-    <Tabs defaultValue='simplified' className='w-full h-full'>
-      <div className='flex items-center gap-2'>
-        <TabsList className='flex-1'>
+    <div style={FILL_COLUMN}>
+      <Tabs value={tab} onValueChange={(v) => setTab(v as Tab)} className='w-full'>
+        <TabsList className='w-full'>
           <TabsTrigger value='simplified'>Simplified</TabsTrigger>
           <TabsTrigger value='original'>Original</TabsTrigger>
         </TabsList>
-        {toggle}
+      </Tabs>
+
+      <div style={{ ...TEXT_BOX, display: tab === 'simplified' ? 'flex' : 'none' }}>
+        <HighlightedText text={view.simplified} spans={view.spans} style={{ flex: 1, minHeight: 0 }} />
       </div>
-      <TabsContent
-        value='simplified'
-        forceMount
-        className='data-[state=inactive]:hidden'
-      >
-        <div className='flex items-center justify-center flex-col'>
-          <div className='flex flex-col text-md mb-4 flex-1 w-full gap-4'>
-            <HighlightedText
-              text={view.simplified}
-              spans={view.spans}
-              height={TEXT_HEIGHT}
-            />
-            {sections}
-          </div>
-        </div>
-      </TabsContent>
-      <TabsContent
-        value='original'
-        forceMount
-        className='data-[state=inactive]:hidden'
-      >
-        <div className='flex items-center justify-center flex-col'>
-          <div className='flex flex-col text-md mb-4 flex-1 w-full gap-4'>
-            <HighlightedText
-              text={view.original}
-              spans={view.originalSpans}
-              height={TEXT_HEIGHT}
-            />
-            <HighlightLegend spans={view.originalSpans} />
-          </div>
-        </div>
-      </TabsContent>
-    </Tabs>
+      <div style={{ ...TEXT_BOX, display: tab === 'original' ? 'flex' : 'none' }}>
+        <HighlightedText
+          text={view.original}
+          spans={view.originalSpans}
+          uniform
+          style={{ flex: 1, minHeight: 0 }}
+        />
+      </div>
+
+      {tab === 'simplified' ? (
+        <WordListsSection
+          keyTerms={view.keyTerms}
+          keptWords={view.keptWords}
+          protectedPhrases={view.protectedPhrases}
+          spans={view.spans}
+          style={LISTS}
+        />
+      ) : (
+        <OriginalNote spans={view.originalSpans} style={LISTS} />
+      )}
+    </div>
   );
 }
 
-// 6rem more than the shared default: the study footer is gone.
-const TEXT_HEIGHT = 'calc(100dvh - 24rem)';
-
-// Inline so they don't depend on Tailwind having scanned new classes.
-const COLUMN_LABEL = { paddingBottom: '0.375rem' } as const;
-const COLUMN_BOX = {
+const FILL_COLUMN: CSSProperties = {
+  display: 'flex',
+  flexDirection: 'column',
+  flex: 1,
+  minHeight: 0,
+  width: '100%',
+  gap: '0.5rem',
+};
+const FILL_COLUMN_PADDED: CSSProperties = { ...FILL_COLUMN, padding: '0 2rem 1rem' };
+const TEXT_BOX: CSSProperties = {
+  flex: 1,
+  minHeight: 0,
+  flexDirection: 'column',
   border: '1px solid var(--border)',
-  borderTop: '2px solid var(--muted-foreground)',
   borderRadius: '0.5rem',
-  minWidth: 0,
-} as const;
+};
+// The word lists never push the page into scrolling: capped, with their own scroll.
+const LISTS: CSSProperties = { flexShrink: 0, maxHeight: '35%', overflowY: 'auto' };

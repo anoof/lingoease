@@ -356,27 +356,27 @@
  "original_spans": [
   {
    "start": 48,
-   "end": 61,
-   "text": "geometric art",
-   "type": "mwe"
+   "end": 57,
+   "text": "geometric",
+   "type": "oov"
   },
   {
    "start": 67,
-   "end": 80,
-   "text": "pen and paper",
-   "type": "mwe"
+   "end": 70,
+   "text": "pen",
+   "type": "oov"
   },
   {
    "start": 84,
    "end": 92,
    "text": "plotters",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 106,
    "end": 110,
    "text": "code",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 155,
@@ -385,22 +385,22 @@
    "type": "oov"
   },
   {
-   "start": 175,
+   "start": 182,
    "end": 187,
-   "text": "social media",
-   "type": "mwe"
+   "text": "media",
+   "type": "oov"
   },
   {
    "start": 220,
    "end": 224,
    "text": "soft",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 225,
    "end": 231,
    "text": "noises",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 240,
@@ -416,39 +416,45 @@
   },
   {
    "start": 340,
+   "end": 349,
+   "text": "chocolate",
+   "type": "oov"
+  },
+  {
+   "start": 353,
    "end": 360,
-   "text": "chocolate 3D printer",
-   "type": "mwe"
+   "text": "printer",
+   "type": "oov"
   },
   {
    "start": 361,
    "end": 369,
    "text": "extruder",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 392,
-   "end": 405,
-   "text": "acrylic paint",
-   "type": "mwe"
+   "end": 399,
+   "text": "acrylic",
+   "type": "oov"
   },
   {
    "start": 441,
    "end": 445,
    "text": "mess",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 479,
    "end": 483,
    "text": "dots",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 523,
    "end": 527,
    "text": "dots",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 557,
@@ -460,7 +466,7 @@
    "start": 591,
    "end": 596,
    "text": "angry",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 610,
@@ -478,37 +484,37 @@
    "start": 671,
    "end": 676,
    "text": "angry",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 678,
    "end": 686,
    "text": "Narrator",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 906,
    "end": 912,
    "text": "Joshua",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 913,
    "end": 922,
    "text": "Schachter",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 952,
    "end": 958,
    "text": "circle",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 959,
    "end": 966,
    "text": "factory",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 990,
@@ -530,9 +536,9 @@
   },
   {
    "start": 1050,
-   "end": 1063,
-   "text": "pen and paper",
-   "type": "mwe"
+   "end": 1053,
+   "text": "pen",
+   "type": "oov"
   },
   {
    "start": 1070,
@@ -544,13 +550,13 @@
    "start": 1102,
    "end": 1107,
    "text": "upset",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1119,
    "end": 1125,
    "text": "yelled",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1141,
@@ -562,7 +568,7 @@
    "start": 1174,
    "end": 1180,
    "text": "pillow",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1258,
@@ -574,37 +580,37 @@
    "start": 1277,
    "end": 1285,
    "text": "Narrator",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1287,
    "end": 1293,
    "text": "Circle",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1295,
    "end": 1301,
    "text": "circle",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1303,
    "end": 1309,
    "text": "circle",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1323,
    "end": 1329,
    "text": "Circle",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1331,
    "end": 1337,
    "text": "circle",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1345,
@@ -622,25 +628,25 @@
    "start": 1409,
    "end": 1411,
    "text": "JS",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1435,
    "end": 1440,
    "text": "mazes",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1457,
-   "end": 1465,
-   "text": "screw up",
-   "type": "mwe"
+   "end": 1462,
+   "text": "screw",
+   "type": "oov"
   },
   {
    "start": 1468,
    "end": 1472,
    "text": "maze",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1556,
@@ -664,7 +670,7 @@
    "start": 1663,
    "end": 1672,
    "text": "mechanism",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1706,
@@ -676,13 +682,13 @@
    "start": 1761,
    "end": 1766,
    "text": "oddly",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1767,
    "end": 1777,
    "text": "satisfying",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1796,
@@ -694,7 +700,7 @@
    "start": 1839,
    "end": 1841,
    "text": "AI",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1857,
@@ -712,7 +718,7 @@
    "start": 1919,
    "end": 1924,
    "text": "video",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1940,
@@ -760,13 +766,13 @@
    "start": 2202,
    "end": 2210,
    "text": "internet",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2234,
    "end": 2240,
    "text": "annoys",
-   "type": "kept_word"
+   "type": "oov"
   }
  ]
 }

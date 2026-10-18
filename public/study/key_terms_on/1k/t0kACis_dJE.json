@@ -552,33 +552,39 @@
   },
   {
    "start": 159,
+   "end": 173,
+   "text": "scientifically",
+   "type": "oov"
+  },
+  {
+   "start": 183,
    "end": 187,
-   "text": "scientifically grounded tips",
-   "type": "mwe"
+   "text": "tips",
+   "type": "oov"
   },
   {
    "start": 216,
    "end": 219,
    "text": "tip",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 223,
    "end": 233,
    "text": "regularity",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 266,
    "end": 270,
    "text": "wake",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 292,
-   "end": 310,
-   "text": "Regularity is king",
-   "type": "mwe"
+   "end": 302,
+   "text": "Regularity",
+   "type": "oov"
   },
   {
    "start": 333,
@@ -602,61 +608,67 @@
    "start": 425,
    "end": 432,
    "text": "weekday",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 440,
    "end": 447,
    "text": "weekend",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 535,
    "end": 540,
    "text": "brain",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 562,
-   "end": 582,
-   "text": "master 24-hour clock",
-   "type": "mwe"
+   "end": 568,
+   "text": "master",
+   "type": "oov"
   },
   {
    "start": 595,
    "end": 605,
    "text": "regularity",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 641,
    "end": 651,
    "text": "regularity",
-   "type": "key_term"
+   "type": "oov"
   },
   {
-   "start": 683,
+   "start": 689,
+   "end": 693,
+   "text": "wake",
+   "type": "oov"
+  },
+  {
+   "start": 694,
    "end": 702,
-   "text": "sleep-wake schedule",
-   "type": "mwe"
+   "text": "schedule",
+   "type": "oov"
   },
   {
    "start": 722,
    "end": 727,
    "text": "alarm",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 731,
    "end": 735,
    "text": "wake",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 771,
    "end": 776,
    "text": "alarm",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 811,
@@ -668,37 +680,43 @@
    "start": 829,
    "end": 832,
    "text": "tip",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 836,
    "end": 847,
    "text": "temperature",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 886,
    "end": 891,
    "text": "brain",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 925,
-   "end": 941,
-   "text": "core temperature",
-   "type": "mwe"
+   "end": 929,
+   "text": "core",
+   "type": "oov"
   },
   {
-   "start": 955,
+   "start": 930,
+   "end": 941,
+   "text": "temperature",
+   "type": "oov"
+  },
+  {
+   "start": 962,
    "end": 969,
-   "text": "degree Celsius",
-   "type": "mwe"
+   "text": "Celsius",
+   "type": "oov"
   },
   {
    "start": 1001,
    "end": 1011,
    "text": "Fahrenheit",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1024,
@@ -710,19 +728,19 @@
    "start": 1056,
    "end": 1062,
    "text": "asleep",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1131,
    "end": 1137,
    "text": "asleep",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
-   "start": 1186,
+   "start": 1194,
    "end": 1208,
-   "text": "current recommendation",
-   "type": "mwe"
+   "text": "recommendation",
+   "type": "oov"
   },
   {
    "start": 1215,
@@ -732,45 +750,51 @@
   },
   {
    "start": 1225,
+   "end": 1232,
+   "text": "bedroom",
+   "type": "oov"
+  },
+  {
+   "start": 1233,
    "end": 1244,
-   "text": "bedroom temperature",
-   "type": "mwe"
+   "text": "temperature",
+   "type": "oov"
   },
   {
    "start": 1272,
    "end": 1282,
    "text": "Fahrenheit",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1312,
    "end": 1319,
    "text": "Celsius",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1366,
    "end": 1369,
    "text": "tip",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 1373,
    "end": 1381,
    "text": "darkness",
-   "type": "key_term"
+   "type": "oov"
   },
   {
-   "start": 1392,
-   "end": 1413,
-   "text": "dark-deprived society",
-   "type": "mwe"
+   "start": 1397,
+   "end": 1405,
+   "text": "deprived",
+   "type": "oov"
   },
   {
    "start": 1436,
    "end": 1444,
    "text": "darkness",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 1445,
@@ -788,25 +812,25 @@
    "start": 1488,
    "end": 1495,
    "text": "release",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1501,
    "end": 1508,
    "text": "hormone",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1516,
    "end": 1525,
    "text": "melatonin",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1531,
    "end": 1540,
    "text": "melatonin",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1547,
@@ -821,16 +845,16 @@
    "type": "oov"
   },
   {
-   "start": 1653,
+   "start": 1662,
    "end": 1669,
-   "text": "computer screens",
-   "type": "mwe"
+   "text": "screens",
+   "type": "oov"
   },
   {
    "start": 1674,
    "end": 1681,
    "text": "tablets",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1694,
@@ -842,19 +866,25 @@
    "start": 1775,
    "end": 1781,
    "text": "sleepy",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
-   "start": 1837,
+   "start": 1841,
    "end": 1845,
-   "text": "eye mask",
-   "type": "mwe"
+   "text": "mask",
+   "type": "oov"
   },
   {
    "start": 1862,
+   "end": 1870,
+   "text": "blackout",
+   "type": "oov"
+  },
+  {
+   "start": 1871,
    "end": 1877,
-   "text": "blackout shades",
-   "type": "mwe"
+   "text": "shades",
+   "type": "oov"
   },
   {
    "start": 1902,
@@ -869,46 +899,46 @@
    "type": "oov"
   },
   {
-   "start": 1925,
+   "start": 1931,
    "end": 1938,
-   "text": "sleep hormone",
-   "type": "mwe"
+   "text": "hormone",
+   "type": "oov"
   },
   {
    "start": 1942,
    "end": 1951,
    "text": "melatonin",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1962,
    "end": 1965,
    "text": "tip",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 2000,
    "end": 2005,
    "text": "awake",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
-   "start": 2040,
+   "start": 2056,
    "end": 2061,
-   "text": "general rule of thumb",
-   "type": "mwe"
+   "text": "thumb",
+   "type": "oov"
   },
   {
    "start": 2095,
    "end": 2101,
    "text": "asleep",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2144,
    "end": 2149,
    "text": "woken",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2207,
@@ -920,7 +950,7 @@
    "start": 2309,
    "end": 2314,
    "text": "brain",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 2321,
@@ -944,7 +974,7 @@
    "start": 2356,
    "end": 2361,
    "text": "brain",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 2378,
@@ -974,7 +1004,7 @@
    "start": 2566,
    "end": 2572,
    "text": "sleepy",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2591,
@@ -986,7 +1016,7 @@
    "start": 2607,
    "end": 2612,
    "text": "brain",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 2618,
@@ -1010,7 +1040,7 @@
    "start": 2711,
    "end": 2714,
    "text": "tip",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 2787,
@@ -1028,25 +1058,25 @@
    "start": 2818,
    "end": 2825,
    "text": "alcohol",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2830,
    "end": 2838,
    "text": "caffeine",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
-   "start": 2851,
+   "start": 2859,
    "end": 2864,
-   "text": "rule of thumb",
-   "type": "mwe"
+   "text": "thumb",
+   "type": "oov"
   },
   {
    "start": 2898,
    "end": 2906,
    "text": "caffeine",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2982,
@@ -1058,19 +1088,19 @@
    "start": 2999,
    "end": 3002,
    "text": "tip",
-   "type": "key_term"
+   "type": "oov"
   },
   {
-   "start": 3011,
+   "start": 3021,
    "end": 3028,
-   "text": "wind-down routine",
-   "type": "mwe"
+   "text": "routine",
+   "type": "oov"
   },
   {
    "start": 3056,
-   "end": 3068,
-   "text": "modern world",
-   "type": "mwe"
+   "end": 3062,
+   "text": "modern",
+   "type": "oov"
   },
   {
    "start": 3094,
@@ -1094,25 +1124,25 @@
    "start": 3241,
    "end": 3247,
    "text": "asleep",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 3326,
-   "end": 3347,
-   "text": "physiological process",
-   "type": "mwe"
+   "end": 3339,
+   "text": "physiological",
+   "type": "oov"
   },
   {
    "start": 3383,
    "end": 3388,
    "text": "plane",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 3413,
    "end": 3418,
    "text": "brain",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 3422,
@@ -1142,7 +1172,7 @@
    "start": 3630,
    "end": 3638,
    "text": "relaxing",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 3714,
@@ -1157,40 +1187,46 @@
    "type": "oov"
   },
   {
-   "start": 3788,
+   "start": 3794,
    "end": 3802,
-   "text": "sleep disorder",
-   "type": "mwe"
+   "text": "disorder",
+   "type": "oov"
   },
   {
    "start": 3822,
    "end": 3830,
    "text": "insomnia",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
-   "start": 3834,
+   "start": 3840,
    "end": 3845,
-   "text": "sleep apnea",
-   "type": "mwe"
+   "text": "apnea",
+   "type": "oov"
   },
   {
    "start": 3858,
    "end": 3862,
    "text": "tips",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 3915,
+   "end": 3921,
+   "text": "sports",
+   "type": "oov"
+  },
+  {
+   "start": 3922,
    "end": 3927,
-   "text": "sports coach",
-   "type": "mwe"
+   "text": "coach",
+   "type": "oov"
   },
   {
    "start": 3959,
    "end": 3963,
    "text": "tips",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 3967,
@@ -1199,10 +1235,10 @@
    "type": "oov"
   },
   {
-   "start": 4011,
+   "start": 4018,
    "end": 4023,
-   "text": "broken ankle",
-   "type": "mwe"
+   "text": "ankle",
+   "type": "oov"
   },
   {
    "start": 4073,
@@ -1211,10 +1247,10 @@
    "type": "oov"
   },
   {
-   "start": 4083,
+   "start": 4090,
    "end": 4095,
-   "text": "broken ankle",
-   "type": "mwe"
+   "text": "ankle",
+   "type": "oov"
   },
   {
    "start": 4128,
@@ -1223,16 +1259,16 @@
    "type": "oov"
   },
   {
-   "start": 4233,
+   "start": 4239,
    "end": 4247,
-   "text": "sleep disorder",
-   "type": "mwe"
+   "text": "disorder",
+   "type": "oov"
   },
   {
    "start": 4310,
    "end": 4316,
    "text": "advice",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 4358,
@@ -1242,9 +1278,9 @@
   },
   {
    "start": 4514,
-   "end": 4525,
-   "text": "super power",
-   "type": "mwe"
+   "end": 4519,
+   "text": "super",
+   "type": "oov"
   }
  ]
 }

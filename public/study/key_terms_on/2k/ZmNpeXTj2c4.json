@@ -277,15 +277,33 @@
  "original_spans": [
   {
    "start": 333,
+   "end": 338,
+   "text": "viral",
+   "type": "oov"
+  },
+  {
+   "start": 339,
+   "end": 351,
+   "text": "storytelling",
+   "type": "oov"
+  },
+  {
+   "start": 352,
    "end": 361,
-   "text": "viral storytelling framework",
-   "type": "mwe"
+   "text": "framework",
+   "type": "oov"
   },
   {
    "start": 452,
-   "end": 475,
-   "text": "viral social media star",
-   "type": "mwe"
+   "end": 457,
+   "text": "viral",
+   "type": "oov"
+  },
+  {
+   "start": 465,
+   "end": 470,
+   "text": "media",
+   "type": "oov"
   },
   {
    "start": 500,
@@ -303,139 +321,145 @@
    "start": 794,
    "end": 802,
    "text": "audience",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 1000,
    "end": 1005,
    "text": "video",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 1091,
    "end": 1097,
    "text": "burger",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 1119,
    "end": 1126,
    "text": "lettuce",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1293,
    "end": 1301,
    "text": "audience",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 1578,
    "end": 1585,
    "text": "lettuce",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1604,
    "end": 1610,
    "text": "burger",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 1681,
    "end": 1686,
    "text": "video",
-   "type": "key_term"
+   "type": "oov"
   },
   {
-   "start": 1709,
+   "start": 1716,
    "end": 1723,
-   "text": "smooth sailing",
-   "type": "mwe"
+   "text": "sailing",
+   "type": "oov"
   },
   {
    "start": 1772,
    "end": 1780,
    "text": "conflict",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1893,
    "end": 1898,
    "text": "Jenny",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1899,
    "end": 1904,
    "text": "Hoyos",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1926,
    "end": 1929,
    "text": "raw",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1958,
+   "end": 1960,
+   "text": "Oh",
+   "type": "oov"
+  },
+  {
+   "start": 1964,
    "end": 1972,
-   "text": "Oh my goodness",
-   "type": "mwe"
+   "text": "goodness",
+   "type": "oov"
   },
   {
    "start": 2033,
    "end": 2035,
    "text": "JH",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 2118,
    "end": 2120,
    "text": "JH",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 2184,
    "end": 2194,
    "text": "subscriber",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2219,
    "end": 2223,
    "text": "mess",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2225,
    "end": 2227,
    "text": "JH",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 2237,
    "end": 2244,
    "text": "ketchup",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2252,
    "end": 2256,
    "text": "buns",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2278,
    "end": 2286,
    "text": "conflict",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2292,
    "end": 2300,
    "text": "audience",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 2315,
@@ -445,9 +469,15 @@
   },
   {
    "start": 2359,
+   "end": 2360,
+   "text": "B",
+   "type": "oov"
+  },
+  {
+   "start": 2361,
    "end": 2365,
-   "text": "B plot",
-   "type": "mwe"
+   "text": "plot",
+   "type": "oov"
   },
   {
    "start": 2390,
@@ -465,25 +495,25 @@
    "start": 2558,
    "end": 2564,
    "text": "burger",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 2785,
    "end": 2791,
    "text": "burger",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 2844,
    "end": 2846,
    "text": "JH",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 2855,
    "end": 2861,
    "text": "burger",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 2898,
@@ -495,19 +525,25 @@
    "start": 2950,
    "end": 2952,
    "text": "JH",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 2991,
+   "end": 2993,
+   "text": "oh",
+   "type": "oov"
+  },
+  {
+   "start": 2997,
    "end": 3005,
-   "text": "oh my goodness",
-   "type": "mwe"
+   "text": "goodness",
+   "type": "oov"
   },
   {
    "start": 3115,
    "end": 3121,
    "text": "burger",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 3126,
@@ -519,7 +555,7 @@
    "start": 3136,
    "end": 3139,
    "text": "raw",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 3228,
@@ -531,7 +567,7 @@
    "start": 3273,
    "end": 3278,
    "text": "video",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 3445,
@@ -543,13 +579,13 @@
    "start": 3561,
    "end": 3567,
    "text": "burger",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 3590,
    "end": 3601,
    "text": "overcooking",
-   "type": "kept_word"
+   "type": "oov"
   }
  ]
 }

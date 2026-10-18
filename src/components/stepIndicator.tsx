@@ -25,7 +25,10 @@ export default function StepIndicator() {
   // currentStep or whether an API key is set. See CONTEXT.md: Study Result.
   if (studyTalkId) {
     return (
-      <div className='flex flex-1 flex-col items-center justify-start w-full'>
+      <div
+        className='flex flex-1 flex-col items-center justify-start w-full'
+        style={{ minHeight: 0 }} // lets the study view fill the screen without the page scrolling
+      >
         <Toaster />
         <StudyResult />
       </div>

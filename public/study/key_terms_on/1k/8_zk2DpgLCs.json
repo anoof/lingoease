@@ -373,31 +373,31 @@
    "start": 65,
    "end": 70,
    "text": "plane",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 97,
    "end": 103,
    "text": "engine",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 110,
    "end": 115,
    "text": "clack",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 117,
    "end": 122,
    "text": "clack",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 124,
    "end": 129,
    "text": "clack",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 141,
@@ -413,51 +413,57 @@
   },
   {
    "start": 246,
+   "end": 252,
+   "text": "flight",
+   "type": "oov"
+  },
+  {
+   "start": 253,
    "end": 263,
-   "text": "flight attendants",
-   "type": "mwe"
+   "text": "attendants",
+   "type": "oov"
   },
   {
    "start": 358,
    "end": 363,
    "text": "pilot",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 387,
    "end": 392,
    "text": "plane",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 440,
    "end": 449,
    "text": "Manhattan",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 514,
    "end": 519,
    "text": "pilot",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 533,
    "end": 538,
    "text": "plane",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 548,
    "end": 554,
    "text": "Hudson",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 555,
    "end": 560,
    "text": "River",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 585,
@@ -469,31 +475,43 @@
    "start": 609,
    "end": 616,
    "text": "engines",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 642,
    "end": 647,
    "text": "plane",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 702,
    "end": 713,
    "text": "unemotional",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 753,
+   "end": 758,
+   "text": "Brace",
+   "type": "oov"
+  },
+  {
+   "start": 763,
    "end": 769,
-   "text": "Brace for impact",
-   "type": "mwe"
+   "text": "impact",
+   "type": "oov"
   },
   {
    "start": 801,
+   "end": 807,
+   "text": "flight",
+   "type": "oov"
+  },
+  {
+   "start": 808,
    "end": 817,
-   "text": "flight attendant",
-   "type": "mwe"
+   "text": "attendant",
+   "type": "oov"
   },
   {
    "start": 859,
@@ -509,9 +527,9 @@
   },
   {
    "start": 1015,
-   "end": 1026,
-   "text": "bucket list",
-   "type": "mwe"
+   "end": 1021,
+   "text": "bucket",
+   "type": "oov"
   },
   {
    "start": 1155,
@@ -529,19 +547,19 @@
    "start": 1306,
    "end": 1313,
    "text": "collect",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1318,
    "end": 1323,
    "text": "wines",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1341,
    "end": 1345,
    "text": "wine",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1416,
@@ -553,25 +571,25 @@
    "start": 1452,
    "end": 1459,
    "text": "urgency",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1570,
    "end": 1576,
    "text": "George",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1577,
    "end": 1587,
    "text": "Washington",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1588,
    "end": 1594,
    "text": "Bridge",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1639,
@@ -583,7 +601,7 @@
    "start": 1667,
    "end": 1673,
    "text": "regret",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1709,
@@ -595,7 +613,7 @@
    "start": 1722,
    "end": 1730,
    "text": "mistakes",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1790,
@@ -607,19 +625,19 @@
    "start": 1816,
    "end": 1819,
    "text": "ego",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1837,
    "end": 1846,
    "text": "regretted",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1858,
    "end": 1864,
    "text": "wasted",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2016,
@@ -637,19 +655,19 @@
    "start": 2058,
    "end": 2066,
    "text": "negative",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2067,
    "end": 2073,
    "text": "energy",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2293,
-   "end": 2305,
-   "text": "mental clock",
-   "type": "mwe"
+   "end": 2299,
+   "text": "mental",
+   "type": "oov"
   },
   {
    "start": 2466,
@@ -673,13 +691,13 @@
    "start": 2628,
    "end": 2631,
    "text": "sad",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2679,
    "end": 2686,
    "text": "sadness",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2694,
@@ -697,13 +715,13 @@
    "start": 2880,
    "end": 2888,
    "text": "artistic",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2889,
    "end": 2895,
    "text": "talent",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2912,
@@ -733,31 +751,31 @@
    "start": 3208,
    "end": 3212,
    "text": "gift",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 3218,
    "end": 3225,
    "text": "miracle",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 3270,
    "end": 3274,
    "text": "gift",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 3358,
    "end": 3367,
    "text": "challenge",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 3439,
    "end": 3444,
    "text": "plane",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 3596,
@@ -769,13 +787,13 @@
    "start": 3653,
    "end": 3661,
    "text": "negative",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 3662,
    "end": 3668,
    "text": "energy",
-   "type": "kept_word"
+   "type": "oov"
   }
  ]
 }

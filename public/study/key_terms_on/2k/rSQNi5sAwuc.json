@@ -469,25 +469,25 @@
    "start": 28,
    "end": 35,
    "text": "complex",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 36,
    "end": 41,
    "text": "organ",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 201,
    "end": 213,
    "text": "neuroscience",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 281,
    "end": 288,
    "text": "complex",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 365,
@@ -503,21 +503,27 @@
   },
   {
    "start": 501,
-   "end": 517,
-   "text": "graduate student",
-   "type": "mwe"
+   "end": 509,
+   "text": "graduate",
+   "type": "oov"
   },
   {
    "start": 535,
    "end": 549,
    "text": "neuroscientist",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 681,
+   "end": 693,
+   "text": "neurological",
+   "type": "oov"
+  },
+  {
+   "start": 694,
    "end": 702,
-   "text": "neurological disorder",
-   "type": "mwe"
+   "text": "disorder",
+   "type": "oov"
   },
   {
    "start": 718,
@@ -535,37 +541,37 @@
    "start": 871,
    "end": 883,
    "text": "neuroscience",
-   "type": "key_term"
+   "type": "oov"
   },
   {
-   "start": 954,
+   "start": 960,
    "end": 969,
-   "text": "brain scientist",
-   "type": "mwe"
+   "text": "scientist",
+   "type": "oov"
   },
   {
    "start": 984,
-   "end": 1000,
-   "text": "graduate student",
-   "type": "mwe"
+   "end": 992,
+   "text": "graduate",
+   "type": "oov"
   },
   {
    "start": 1014,
    "end": 1017,
    "text": "Tim",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1018,
    "end": 1026,
    "text": "Marzullo",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1073,
    "end": 1080,
    "text": "complex",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1157,
@@ -577,7 +583,7 @@
    "start": 1205,
    "end": 1212,
    "text": "amateur",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1264,
@@ -589,25 +595,31 @@
    "start": 1283,
    "end": 1292,
    "text": "discovery",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1296,
    "end": 1308,
    "text": "neuroscience",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 1380,
    "end": 1388,
    "text": "Backyard",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1408,
-   "end": 1434,
-   "text": "DIY neuroscience equipment",
-   "type": "mwe"
+   "end": 1411,
+   "text": "DIY",
+   "type": "oov"
+  },
+  {
+   "start": 1412,
+   "end": 1424,
+   "text": "neuroscience",
+   "type": "oov"
   },
   {
    "start": 1490,
@@ -619,55 +631,55 @@
    "start": 1545,
    "end": 1554,
    "text": "volunteer",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1594,
    "end": 1597,
    "text": "Sam",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1598,
    "end": 1603,
    "text": "Kelly",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1605,
    "end": 1608,
    "text": "Sam",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1610,
    "end": 1614,
    "text": "Greg",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1615,
    "end": 1619,
    "text": "Gage",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1632,
    "end": 1635,
    "text": "Sam",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1700,
    "end": 1702,
    "text": "SK",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1708,
    "end": 1710,
    "text": "GG",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 1749,
@@ -679,13 +691,13 @@
    "start": 1771,
    "end": 1777,
    "text": "sleeve",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1822,
    "end": 1832,
    "text": "electrodes",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 1981,
@@ -697,67 +709,79 @@
    "start": 1989,
    "end": 1996,
    "text": "neurons",
-   "type": "key_term"
+   "type": "oov"
   },
   {
    "start": 2082,
    "end": 2090,
    "text": "chemical",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2118,
    "end": 2125,
    "text": "neurons",
-   "type": "key_term"
+   "type": "oov"
   },
   {
-   "start": 2145,
+   "start": 2151,
    "end": 2157,
-   "text": "motor cortex",
-   "type": "mwe"
+   "text": "cortex",
+   "type": "oov"
   },
   {
    "start": 2261,
+   "end": 2267,
+   "text": "corpus",
+   "type": "oov"
+  },
+  {
+   "start": 2268,
    "end": 2276,
-   "text": "corpus callosum",
-   "type": "mwe"
+   "text": "callosum",
+   "type": "oov"
   },
   {
    "start": 2293,
+   "end": 2299,
+   "text": "spinal",
+   "type": "oov"
+  },
+  {
+   "start": 2300,
    "end": 2304,
-   "text": "spinal cord",
-   "type": "mwe"
+   "text": "cord",
+   "type": "oov"
   },
   {
-   "start": 2313,
+   "start": 2325,
    "end": 2331,
-   "text": "lower motor neuron",
-   "type": "mwe"
+   "text": "neuron",
+   "type": "oov"
   },
   {
-   "start": 2367,
+   "start": 2378,
    "end": 2387,
-   "text": "electrical discharge",
-   "type": "mwe"
+   "text": "discharge",
+   "type": "oov"
   },
   {
    "start": 2422,
    "end": 2432,
    "text": "electrodes",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2622,
    "end": 2624,
    "text": "SK",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 2630,
    "end": 2632,
    "text": "GG",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 2668,
@@ -769,7 +793,7 @@
    "start": 2861,
    "end": 2864,
    "text": "app",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 2892,
@@ -779,9 +803,15 @@
   },
   {
    "start": 2970,
+   "end": 2976,
+   "text": "spinal",
+   "type": "oov"
+  },
+  {
+   "start": 2977,
    "end": 2981,
-   "text": "spinal cord",
-   "type": "mwe"
+   "text": "cord",
+   "type": "oov"
   },
   {
    "start": 3109,
@@ -790,46 +820,46 @@
    "type": "oov"
   },
   {
-   "start": 3205,
+   "start": 3218,
    "end": 3227,
-   "text": "motor action potential",
-   "type": "mwe"
+   "text": "potential",
+   "type": "oov"
   },
   {
    "start": 3373,
    "end": 3382,
    "text": "volunteer",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 3408,
    "end": 3414,
    "text": "Miguel",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 3415,
    "end": 3424,
    "text": "Goncalves",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 3426,
    "end": 3432,
    "text": "Miguel",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 3434,
    "end": 3436,
    "text": "GG",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 3438,
    "end": 3444,
    "text": "Miguel",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 3779,
@@ -841,7 +871,7 @@
    "start": 3802,
    "end": 3809,
    "text": "fingers",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 3840,
@@ -859,25 +889,25 @@
    "start": 3962,
    "end": 3968,
    "text": "inject",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 4232,
-   "end": 4243,
-   "text": "ulnar nerve",
-   "type": "mwe"
+   "end": 4237,
+   "text": "ulnar",
+   "type": "oov"
   },
   {
-   "start": 4409,
+   "start": 4424,
    "end": 4433,
-   "text": "human-to-human interface",
-   "type": "mwe"
+   "text": "interface",
+   "type": "oov"
   },
   {
    "start": 4454,
    "end": 4457,
    "text": "Sam",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 4473,
@@ -889,7 +919,7 @@
    "start": 4805,
    "end": 4808,
    "text": "Sam",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 4845,
@@ -907,49 +937,49 @@
    "start": 4945,
    "end": 4951,
    "text": "Miguel",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 4953,
    "end": 4955,
    "text": "MG",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 4980,
    "end": 4982,
    "text": "GG",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 5066,
    "end": 5068,
    "text": "MG",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 5070,
    "end": 5074,
    "text": "Nope",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 5076,
    "end": 5078,
    "text": "GG",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 5099,
    "end": 5101,
    "text": "MG",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 5117,
    "end": 5119,
    "text": "GG",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 5162,
@@ -964,22 +994,22 @@
    "type": "oov"
   },
   {
-   "start": 5615,
+   "start": 5620,
    "end": 5625,
-   "text": "good sport",
-   "type": "mwe"
+   "text": "sport",
+   "type": "oov"
   },
   {
    "start": 5676,
    "end": 5693,
    "text": "electrophysiology",
-   "type": "kept_word"
+   "type": "oov"
   },
   {
    "start": 5723,
    "end": 5728,
    "text": "neuro",
-   "type": "proper_noun"
+   "type": "oov"
   },
   {
    "start": 5729,

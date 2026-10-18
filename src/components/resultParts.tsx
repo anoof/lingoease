@@ -7,69 +7,56 @@ import {
   type SpanType,
 } from '@/lib/highlight';
 import type { ResultView } from '@/lib/resultView';
-import { useMemo } from 'react';
+import { useMemo, type CSSProperties } from 'react';
 
-// Renders `text` with the backend's highlight spans. Without spans (an older
-// backend) the text is shown plain — the frontend has no word lists of its own.
+// Renders `text` with the backend's highlight spans. `uniform` shows every
+// span in the "outside the word list" style (used for the original text,
+// where the categories of the simplified text don't apply). Without spans
+// (an older backend) the text is shown plain.
+//
+// The box scrolls on its own; size it from the parent (`style`), e.g. flex: 1
+// inside a column that fills the screen.
 export function HighlightedText({
   text,
   spans,
-  height,
+  uniform = false,
+  style,
 }: {
   text: string;
   spans: Span[];
-  height?: string;
+  uniform?: boolean;
+  style?: CSSProperties;
 }) {
   const segments = useMemo(() => segmentsFromSpans(text, spans), [text, spans]);
 
   return (
     <div
-      className='h-[calc(100dvh-30rem)] w-full min-w-0 rounded-md p-4 overflow-y-auto overscroll-none'
-      style={height ? { height } : undefined}
+      className='w-full min-w-0 select-text overscroll-contain'
+      style={{ overflowY: 'auto', padding: '1rem', lineHeight: 1.7, ...style }}
     >
-      <div className='mb-6 select-text'>
-        {segments.map((seg, i) =>
-          seg.type ? (
-            <span
-              key={i}
-              className='highlighted-text'
-              data-span-type={seg.type}
-              title={SPAN_LABELS[seg.type]}
-              style={SPAN_STYLES[seg.type]}
-            >
-              {seg.text}
-            </span>
-          ) : (
-            <span key={i}>{seg.text}</span>
-          )
-        )}
-      </div>
+      {segments.map((seg, i) => {
+        if (!seg.type) return <span key={i}>{seg.text}</span>;
+        const type: SpanType = uniform ? 'oov' : seg.type;
+        return (
+          <span
+            key={i}
+            className='highlighted-text'
+            data-span-type={type}
+            title={SPAN_LABELS[type]}
+            style={SPAN_STYLES[type]}
+          >
+            {seg.text}
+          </span>
+        );
+      })}
     </div>
   );
 }
 
-function Swatch({ type }: { type: SpanType }) {
-  return (
-    <span style={SPAN_STYLES[type]} aria-hidden>
-      Aa
-    </span>
-  );
-}
-
-// One line under the text: what each highlight style means. Only the types
-// that occur in the given spans are listed.
-export function HighlightLegend({ spans }: { spans: Span[] }) {
-  const types = spanTypesPresent(spans);
-  if (types.length === 0) return null;
-  return (
-    <div className='w-full flex flex-wrap gap-x-4 gap-y-1 px-4 pt-2 text-xs text-muted-foreground'>
-      {types.map((t) => (
-        <span key={t} className='inline-flex items-center gap-1'>
-          <Swatch type={t} /> {SPAN_LABELS[t]}
-        </span>
-      ))}
-    </div>
-  );
+// A label written in its own highlight style — the legend is the labels
+// themselves (no separate swatches).
+export function StyledLabel({ type, children }: { type: SpanType; children?: React.ReactNode }) {
+  return <span style={SPAN_STYLES[type]}>{children ?? SPAN_LABELS[type]}</span>;
 }
 
 export function CoverageLine({ coverage }: { coverage: number }) {
@@ -81,49 +68,77 @@ export function CoverageLine({ coverage }: { coverage: number }) {
   );
 }
 
-// Below the text, above Start Over — hidden entirely when all lists are empty
-// (FRONTEND_BRIEF.md change 3).
-export function KeyTermsSection({
+const SECTION: CSSProperties = {
+  width: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '0.75rem',
+  padding: '0.75rem 1rem',
+  fontSize: '0.875rem',
+  borderTop: '1px solid var(--border)',
+};
+const HEADING: CSSProperties = { fontWeight: 600, marginBottom: '0.25rem' };
+const MUTED: CSSProperties = { color: 'var(--muted-foreground)' };
+
+// Below the simplified text. Each heading is styled like the highlight it
+// explains, so it doubles as the legend. Types without a list (outside the
+// word list, names) get one "Also marked" line, only if they occur.
+export function WordListsSection({
   keyTerms,
   keptWords,
   protectedPhrases,
+  spans,
+  style,
 }: {
   keyTerms: ResultView['keyTerms'];
   keptWords: ResultView['keptWords'];
   protectedPhrases: ResultView['protectedPhrases'];
+  spans: Span[];
+  style?: CSSProperties;
 }) {
-  if (keyTerms.length === 0 && keptWords.length === 0 && protectedPhrases.length === 0) {
-    return null;
-  }
+  const present = new Set(spanTypesPresent(spans));
+  const others = (['oov', 'proper_noun'] as SpanType[]).filter((t) => present.has(t));
+  const lists: { type: SpanType; items: string[] }[] = [
+    { type: 'key_term', items: keyTerms.map((t) => `${t.word} (${t.count})`) },
+    { type: 'kept_word', items: keptWords },
+    { type: 'mwe', items: protectedPhrases },
+  ];
+  const shown = lists.filter((l) => l.items.length > 0);
+  if (shown.length === 0 && others.length === 0) return null;
 
   return (
-    <div className='w-full flex flex-col gap-3 px-4 py-3 text-sm border-t'>
-      {keyTerms.length > 0 && (
-        <div>
-          <div className='font-semibold mb-1'>
-            <Swatch type='key_term' /> {SPAN_LABELS.key_term}
+    <div style={{ ...SECTION, ...style }}>
+      {shown.map(({ type, items }) => (
+        <div key={type}>
+          <div style={HEADING}>
+            <StyledLabel type={type} />
           </div>
-          <div className='text-muted-foreground'>
-            {keyTerms.map((t) => `${t.word} (${t.count})`).join(', ')}
-          </div>
+          <div style={MUTED}>{items.join(', ')}</div>
+        </div>
+      ))}
+      {others.length > 0 && (
+        <div style={MUTED}>
+          Also marked:{' '}
+          {others.map((t, i) => (
+            <span key={t}>
+              {i > 0 && ' · '}
+              <StyledLabel type={t} />
+            </span>
+          ))}
         </div>
       )}
-      {keptWords.length > 0 && (
-        <div>
-          <div className='font-semibold mb-1'>
-            <Swatch type='kept_word' /> {SPAN_LABELS.kept_word}
-          </div>
-          <div className='text-muted-foreground'>{keptWords.join(', ')}</div>
-        </div>
-      )}
-      {protectedPhrases.length > 0 && (
-        <div>
-          <div className='font-semibold mb-1'>
-            <Swatch type='mwe' /> {SPAN_LABELS.mwe}
-          </div>
-          <div className='text-muted-foreground'>{protectedPhrases.join(', ')}</div>
-        </div>
-      )}
+    </div>
+  );
+}
+
+// Below the original text: one style only.
+export function OriginalNote({ spans, style }: { spans: Span[]; style?: CSSProperties }) {
+  if (spans.length === 0) return null;
+  return (
+    <div style={{ ...SECTION, ...MUTED, ...style }}>
+      <div>
+        Words <StyledLabel type='oov'>outside the word list</StyledLabel> for this level are marked.
+      </div>
     </div>
   );
 }
