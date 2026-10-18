@@ -67,7 +67,16 @@ export default function StepIndicator() {
   ];
 
   return (
-    <div className='flex flex-1 flex-col items-center justify-center w-full'>
+    <div
+      className='flex flex-1 flex-col items-center w-full'
+      // With a result: fill the screen from the top without the page scrolling
+      // (as the study view). Without: the steps stay centred.
+      style={
+        simplifiedResult
+          ? { minHeight: 0, justifyContent: 'flex-start' }
+          : { justifyContent: 'center' }
+      }
+    >
       <Toaster />
       {!simplifiedResult ? (
         <ul className='steps steps-vertical'>
