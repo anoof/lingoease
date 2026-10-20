@@ -122,24 +122,35 @@ export default function TextUpload({
       <DrawerTrigger className='cursor-pointer' asChild>
         {children}
       </DrawerTrigger>
-      <DrawerContent>
-        <DrawerHeader>
+      {/* Fixed height: the text box takes what's left and scrolls inside
+          itself, so the options and the Simplify button stay on screen however
+          long the pasted text is. Inline styles so the sizing doesn't depend
+          on Tailwind having scanned new classes. */}
+      <DrawerContent style={{ height: '85dvh', maxHeight: '85dvh' }}>
+        <DrawerHeader style={{ flexShrink: 0 }}>
           <DrawerTitle className='flex items-center justify-center gap-2'>
             Upload Text
           </DrawerTitle>
           <DrawerDescription></DrawerDescription>
         </DrawerHeader>
-        <div className='flex h-[60dvh] flex-col px-8'>
+        <div
+          className='flex flex-col px-8'
+          style={{ flex: 1, minHeight: '6rem' }}
+        >
           <Textarea
             value={content}
             onChange={(e) => setContent(e.target.value)}
-            className='flex-1'
             placeholder='Type your text here...'
+            // The shared Textarea grows with its content (field-sizing:
+            // content); here it must stay the size of its box and scroll.
+            style={TEXT_INPUT}
           />
         </div>
-        <AudioOptions />
+        <div style={{ flexShrink: 0 }}>
+          <AudioOptions />
+        </div>
 
-        <DrawerFooter className='px-8'>
+        <DrawerFooter className='px-8' style={{ flexShrink: 0 }}>
           <Button disabled={!content || simplifying} onClick={startSimplify}>
             {simplifying ? (
               <span className='loading loading-dots loading-xs'></span>
@@ -152,3 +163,12 @@ export default function TextUpload({
     </Drawer>
   );
 }
+
+const TEXT_INPUT = {
+  fieldSizing: 'fixed',
+  flex: 1,
+  minHeight: 0,
+  height: '100%',
+  overflowY: 'auto',
+  resize: 'none',
+} as React.CSSProperties;
